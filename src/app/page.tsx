@@ -2,10 +2,8 @@
 
 import Link from "next/link";
 import Login from "./pages/login/page";
-import axios from "axios";
 
 export default function Home() {
-
 
   return (
     <div className="grid">

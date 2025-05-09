@@ -4,9 +4,6 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import {z} from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useState } from "react";
-
-
 
 export default function Register() {
 
@@ -62,17 +59,6 @@ export default function Register() {
     resolver: zodResolver(validationSchema)
   })
 
-  useEffect(() => {
-    fetch("/register/newUser", {
-    method: "POST",
-    headers: {
-      'Content-type': 'application/json'
-    },
-    body: JSON.stringify(handleSubmit)
-    })
-    .then(res => res.json())
-    .then(data => console.log(data))
-  }, [])
 
   return (
     <div className="grid">
@@ -91,7 +77,7 @@ export default function Register() {
       <div className="grid grid-cols-1 w-3/6 items-center my-12 m-auto">
 
         <form 
-        onSubmit={handleSubmit((newUser) => newUser)} 
+        onSubmit={handleSubmit((newUser) => console.log(newUser))} 
         className="grid grid-cols-1 justify-self-center w-2.5/6 mx-12 pt-0 p-6 border-2 rounded-xs border-gray-200">
           <p className="my-6 text-center text-2xl font-bold">Регистрация на нов потребител</p>
           <p className="text-sm">Тази регистрационна форма се попълва, само ако нямате потребителско име и парола

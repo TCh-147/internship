@@ -40,14 +40,14 @@ collection.filter((collectionName) => {
 const app = express()
 const Users = mongoose.model("user", UserSchema)
 
-app.get('/users', async (req, res) => {
-    try {
-        const users = await Users.find()
-        res.json(users)
-    } catch (error) {
-        res.status(500).json({message: error})
-    }
-})
+// app.get('/users', async (req, res) => {
+//     try {
+//         const users = await Users.find()
+//         res.json(users)
+//     } catch (error) {
+//         res.status(500).json({message: error})
+//     }
+// })
 
 app.post('/register/newUser', async (request, res) => {
     try {
