@@ -2,7 +2,7 @@
 
 import { SubmitHandler, useForm } from "react-hook-form";
 
-interface ILoginData {
+type LoginData = {
     username: string,
     password: string
   }
@@ -12,9 +12,9 @@ export default function Login(){
     const {
         register,
         handleSubmit
-      } = useForm<ILoginData>()
+      } = useForm<LoginData>()
     
-      const onSubmit: SubmitHandler<ILoginData> = (data) => console.log(data)
+      const onSubmit: SubmitHandler<LoginData> = (data) => console.log(data)
 
       return(
         <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 justify-self-end w-2.5/6 mx-12 pt-0 p-6 border-2 rounded-xs border-gray-200">
