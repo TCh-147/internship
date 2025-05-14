@@ -2,6 +2,8 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {submitForm} from "app/api/routes/submitForm";
 import { registerSchema, RegisterSchema } from "../validations/registerSchema";
+import TextField from "./text-field";
+import {fields} from "../register-form-fields"
 
 export default function RegisterForm(){
 
@@ -33,64 +35,14 @@ export default function RegisterForm(){
           <p className="my-4 text-[13.5px] before-red-star">Задължителни полета</p>
 
           <div className="grid grid-cols-2">
-            <label className="my-2 px-2 text-base before-red-star">ЕГН:</label>
-            <div className="m-0 p-0">
-              <input {...register("egn",{required: true})} className="my-2 p-1 w-full border-2 rounded-xs border-gray-200" type="text"/>
-              <p className="my-2 text-red-500 text-right">{errors.egn?.message}</p>
-            </div>
-            <label className="my-2 px-2 text-base">ЛНЧ или паспорт:</label>
-            <div>
-              <input {...register("lnchOrPassport")} className="my-2 p-1 w-full border-2 rounded-xs border-gray-200" type="text"/>
-              <p className="my-2 text-red-500 text-right">{errors.lnchOrPassport?.message}</p>
-            </div>
-            
-            <label className="my-2 px-2 text-base before-red-star">Име и фамилия на кирилица:</label>
-            <div>
-              <input {...register("fullNameCyrillic")} className="my-2 p-1 w-full border-2 rounded-xs border-gray-200" type="text"/>
-              <p className="my-2 text-red-500 text-right">{errors.fullNameCyrillic?.message}</p>
-            </div>
-            
-            <label className="my-2 px-2 text-base before-red-star">Име и фамилия на латиница:</label>
-            <div>
-              <input {...register("fullNameLatin")} className="my-2 p-1 w-full border-2 rounded-xs border-gray-200" type="text"/>
-              <p className="my-2 text-red-500 text-right">{errors.fullNameLatin?.message}</p>
-            </div>
-            
-            <label className="my-2 px-2 text-base before-red-star">Имейл:</label>
-            <div>
-              <input {...register("email")} className="my-2 p-1 w-full border-2 rounded-xs border-gray-200" type="text"/>
-              <p className="my-2 text-red-500 text-right">{errors.email?.message}</p>
-            </div>
-            
-            <label className="my-2 px-2 text-base before-red-star">Телофон:</label>
-            <div>
-              <input {...register("phoneNum")} className="my-2 p-1 w-full border-2 rounded-xs border-gray-200" type="text"/>
-              <p className="my-2 text-red-500 text-right">{errors.phoneNum?.message}</p>
-            </div>
-            
-            <label className="my-2 px-2 text-base before-red-star">Адрес:</label>
-            <div>
-              <input {...register("address")} className="my-2 p-1 w-full border-2 rounded-xs border-gray-200" type="text"/>
-              <p className="my-2 text-red-500 text-right">{errors.address?.message}</p>
-            </div>
-
-            <label className="my-2 px-2 text-base before-red-star">Потребителско име:</label>
-            <div>
-              <input {...register("username")} className="my-2 p-1 w-full border-2 rounded-xs border-gray-200" type="text"/>
-              <p className="my-2 text-red-500 text-right">{errors.username?.message}</p>
-            </div>
-            
-            <label className="my-2 px-2 text-base before-red-star">Парола за вход:</label>
-            <div>
-              <input {...register("password")} className="my-2 p-1 w-full border-2 rounded-xs border-gray-200 " type="password"/>
-              <p className="my-2 text-red-500 text-right">{errors.password?.message}</p>
-            </div>
-            
-            <label className="my-2 px-2 text-base before-red-star">Повторете паролата:</label>
-            <div>
-              <input {...register("confirmPass")} className="my-2 p-1 w-full border-2 rounded-xs border-gray-200 " type="password"/>
-              <p className="my-2 text-red-500 text-right">{errors.confirmPass?.message}</p>
-            </div>
+            {
+              fields.map(({fieldName, label, type, required}) => (
+                
+                  <TextField key={fieldName} register={register} 
+                  errors={errors} label={label} fieldName={fieldName} type={type} required={required}></TextField>
+                
+              ))
+            }
             
           </div>
 

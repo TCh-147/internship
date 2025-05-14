@@ -1,6 +1,6 @@
 'use server'
 
-import { registerSchema, RegisterSchema } from "app/pages/validations/registerSchema"
+import { RegisterSchema } from "app/pages/validations/registerSchema"
 
 export async function submitForm(registerData: RegisterSchema){
 

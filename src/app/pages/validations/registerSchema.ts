@@ -11,8 +11,8 @@ export const registerSchema = z.object({
     lnchOrPassport: z.number({invalid_type_error: "Невалиден ЛНЧ!"}).optional().or(z.literal('')).refine(
       (data) => data?.toString().length != 10, {message: "Невалиден ЛНЧ!"}
     ),
-    phoneNum: z.string({required_error: "Моля, въведете телефон!"}).length(10, {message: "Невалиден телефон!"}).refine(
-      (phone) => phone.match(/[0-9]/), {message: "Невалиден телефон!"}
+    phoneNum: z.string({required_error: "Моля, въведете телефон!"}).refine(
+      (phone) => phone.match(/^[0-9]{10}$/), {message: "Невалиден телефон!"}
     ),
     email: z.string({required_error: "Моля, въведете имейл!"}).email({message: "Невалиден имейл!"}),
     address: z.string({required_error: "Моля, въведете адрес!"}).min(5,{message: "Моля въведете валиден адрес!"}),

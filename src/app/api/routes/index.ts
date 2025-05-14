@@ -2,6 +2,10 @@ import express from "express"
 import { MongoClient } from "mongodb"
 import mongoose from "mongoose"
 import * as argon2 from "argon2"
+import jwt from "jsonwebtoken"
+import {secret} from "./secret_key.ts"
+// import User from "./models/user.ts"
+
 
 const UserSchema = new mongoose.Schema({
     username: {type: String, required: true},
@@ -32,12 +36,13 @@ type loginUser = {
   password: string
 }
 
+
 const dbUrl: string = "mongodb://localhost:27017/fibankdb"
 
 const connectDb = async () => {
   try {
     const connectionInstance = await mongoose.connect(dbUrl)
-    console.log('MongoDb connected!!! DB Host:' + connectionInstance.connection.host)
+    console.log('MongoDb connected. DB Host:' + connectionInstance.connection.host)
   } catch (error) {
     console.log('Mongo connection error: ', error)
     process.exit(1)
@@ -45,14 +50,7 @@ const connectDb = async () => {
 }
 connectDb()
 
-let usersCollection = null
-const client = new MongoClient("mongodb://localhost:27017/")
-await client.connect()
-const database = client.db("fibankdb")
-let collection = await database.listCollections({}, { nameOnly: true }).toArray();
-collection.filter((collectionName) => {
-  return collectionName.name === "users";
-});
+
 
 
 const app = express()
@@ -70,17 +68,21 @@ app.post('/register', async (request, res) => {
       const registerData: registerUser = request.body
       registerData.password = await argon2.hash(registerData.password)
       const newUser = await Users.create(registerData)
-      try {
+        let usersCollection = null
+        const client = new MongoClient("mongodb://localhost:27017/")
+        await client.connect()
+        const database = client.db("fibankdb")
+        let collection = await database.listCollections({}, { nameOnly: true }).toArray();
+        collection.filter((collectionName) => {
+          return collectionName.name === "users";
+        })
         if (collection.length == 0) {
           usersCollection = await database.createCollection("users")
         } else {
           usersCollection = await database.collection("users")
         }
         await usersCollection.insertOne(newUser)
-        console.log("successfully added to the database")
-      } catch (error) {
-        console.log(error)
-      }
+
       res.status(200).json(newUser)
     } catch (error) {
       res.status(400).json({message: error})
@@ -91,15 +93,11 @@ app.post('/login', async (request, res) => {
     try {
       const loginData: loginUser = request.body
       const findUser = await Users.findOne({username: loginData.username}).orFail()
-      console.log("findUser document from db: ", findUser)
-      console.log("findUser password: ", findUser.password)
-        try {
-            const checkPass: boolean = await argon2.verify(findUser.password, loginData.password)
-            console.log("check password: ", checkPass)
-        } catch (error) {
-            console.log(error)
+      const checkPass: boolean = await argon2.verify(findUser.password, loginData.password)
+        if(checkPass){
+          const token = jwt.sign(JSON.stringify(findUser), secret, {algorithm: 'HS256'})
+          res.status(200).json({token})
         }
-        res.status(200).json({message: "logged in"})
     } catch (error) {
         res.status(400).json({message: error})
     }

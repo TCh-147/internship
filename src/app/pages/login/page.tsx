@@ -5,13 +5,14 @@ import { LoginSchema } from "../validations/loginSchema";
 import submitLogin from "app/api/routes/submitLoginForm";
 
 export default function Login(){
-
     const {
         register,
         handleSubmit
       } = useForm<LoginSchema>()
     
-      const onSubmit: SubmitHandler<LoginSchema> = (data) => submitLogin(data)
+      const onSubmit: SubmitHandler<LoginSchema> = (data) => {
+        submitLogin(data)
+      }
 
       return(
         <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 justify-self-end w-2.5/6 mx-12 pt-0 p-6 border-2 rounded-xs border-gray-200">
