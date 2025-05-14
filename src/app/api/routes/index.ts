@@ -1,63 +1,36 @@
-import express, {request, response} from "express"
+import express from "express"
 import { MongoClient } from "mongodb"
 import mongoose from "mongoose"
-import { z } from "zod"
+import * as argon2 from "argon2"
 
 const UserSchema = new mongoose.Schema({
-    username: {type: String, require: true},
-    password: {type: String, require: true},
-    EGN: {type: String, require: true},
+    username: {type: String, required: true},
+    password: {type: String, required: true},
+    egn: {type: String, required: true},
     LnchOrpassportNum: {type: Number},
-    fullNameCyrilic: {type: String, require: true},
-    fullNameLatin: {type: String, require: true},
-    email: {type: String, require: true},
-    phoneNum: {type: String, require: true},
-    address: {type: String, require: true}
+    fullNameCyrillic: {type: String, required: true},
+    fullNameLatin: {type: String, required: true},
+    email: {type: String, required: true},
+    phoneNum: {type: String, required: true},
+    address: {type: String, required: true}
 })
 
-const validationSchema = z.object({
-    egn: z.string({required_error: "Моля, въведете ЕГН!"}).length(10, {message: "Невалидно ЕГН!"}),
-    fullNameCyrillic: z.string({required_error: "Моля, въведете име!"}).refine(
-      (name) => name.match(/[А-Яа-я]/), {message: "Моля, въведете име на кирилица!"}
-    ),
-    fullNameLatin: z.string({required_error: "Моля, въведете име!"}).refine(
-      (name) => name.match(/[A-Za-z]/), {message: "Моля, въведете име на латиница!"}
-    ),
-    lnchOrPassport: z.number({invalid_type_error: "Невалиден ЛНЧ!"}).optional().or(z.literal('')).refine(
-      (data) => data?.toString().length != 10, {message: "Невалиден ЛНЧ!"}
-    ),
-    phoneNum: z.string({required_error: "Моля, въведете телефон!"}).length(10, {message: "Невалиден телефон!"}).refine(
-      (phone) => phone.match(/[0-9]/), {message: "Невалиден телефон!"}
-    ),
-    email: z.string({required_error: "Моля, въведете имейл!"}).email({message: "Невалиден имейл!"}),
-    address: z.string({required_error: "Моля, въведете адрес!"}).min(5,{message: "Моля въведете валиден адрес!"}),
-    username: z.string({required_error: "Моля, въведете потребителско име!"}).refine(
-      (username) => username.match(/[A-Za-z]/), {message: "Символи на кирилица не са позволени!"}
-    ),
-    password: z.string({required_error: "Моля, въведете парола!"})
-    .superRefine((pass, err) => {
-      if(pass.length < 6)err.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Паролата е твърде къса!"
-      })
-      if(!pass.match(/[0-9]/)) err.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Паролата трябва да съдържа поне една цифра!"
-      })
-      if(pass.length > 24)err.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Паролата е твърде дълга!"
-      })
-      if(!pass.match(/[A-Za-z]/)) err.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: "Паролата трябва да съдържа поне една буква на латиница!"
-      })
-      
-    }),
-    confirmPass: z.string({required_error: "Моля, повторете паролата!"})
-  }).refine((data) => data.password === data.confirmPass, {
-    message: "Паролата не съвпада!"
-  })
+type registerUser = {
+  username: string,
+  password: string,
+  egn: string,
+  LnchOrpassportNum: number,
+  fullNameCyrillic: string,
+  fullNameLatin: string,
+  email: string,
+  phoneNum: string,
+  address: string  
+}
+
+type loginUser = {
+  username: string,
+  password: string
+}
 
 const dbUrl: string = "mongodb://localhost:27017/fibankdb"
 
@@ -90,30 +63,43 @@ app.use((req, res, next) => {
     next()
 })
 
-// app.get('/users', async (req, res) => {
-//     try {
-//         const users = await Users.find()
-//         res.json(users)
-//     } catch (error) {
-//         res.status(500).json({message: error})
-//     }
-// })
+app.use(express.json())
 
 app.post('/register', async (request, res) => {
     try {
-        const newUser = await Users.create()
+      const registerData: registerUser = request.body
+      registerData.password = await argon2.hash(registerData.password)
+      const newUser = await Users.create(registerData)
+      try {
+        if (collection.length == 0) {
+          usersCollection = await database.createCollection("users")
+        } else {
+          usersCollection = await database.collection("users")
+        }
+        await usersCollection.insertOne(newUser)
+        console.log("successfully added to the database")
+      } catch (error) {
+        console.log(error)
+      }
+      res.status(200).json(newUser)
+    } catch (error) {
+      res.status(400).json({message: error})
+    }
+})
+
+app.post('/login', async (request, res) => {
+    try {
+      const loginData: loginUser = request.body
+      const findUser = await Users.findOne({username: loginData.username}).orFail()
+      console.log("findUser document from db: ", findUser)
+      console.log("findUser password: ", findUser.password)
         try {
-            if (collection.length == 0) {
-                usersCollection = await database.createCollection("users")
-            } else {
-                usersCollection = await database.collection("users")
-            }
-            await usersCollection.insertOne(newUser)
-            console.log("successfully added to the database")
+            const checkPass: boolean = await argon2.verify(findUser.password, loginData.password)
+            console.log("check password: ", checkPass)
         } catch (error) {
             console.log(error)
         }
-        res.status(200).json(newUser)
+        res.status(200).json({message: "logged in"})
     } catch (error) {
         res.status(400).json({message: error})
     }

@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-export const validationSchema = z.object({
+export const registerSchema = z.object({
     egn: z.string({required_error: "Моля, въведете ЕГН!"}).length(10, {message: "Невалидно ЕГН!"}),
     fullNameCyrillic: z.string({required_error: "Моля, въведете име!"}).refine(
       (name) => name.match(/[А-Яа-я]/), {message: "Моля, въведете име на кирилица!"}
@@ -44,4 +44,4 @@ export const validationSchema = z.object({
     message: "Паролата не съвпада!"
   })
 
-export type ValidationSchema = z.infer<typeof validationSchema>
+export type RegisterSchema = z.infer<typeof registerSchema>

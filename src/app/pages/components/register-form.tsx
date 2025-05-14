@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {submitForm} from "app/api/routes/submitForm";
-import { validationSchema, ValidationSchema } from "../validations/registerSchema";
+import { registerSchema, RegisterSchema } from "../validations/registerSchema";
 
 export default function RegisterForm(){
 
@@ -10,11 +10,11 @@ export default function RegisterForm(){
         handleSubmit,
         formState: {errors}
     } = useForm({
-        resolver: zodResolver(validationSchema)
+        resolver: zodResolver(registerSchema)
     })
 
 
-    const onSubmit: SubmitHandler<ValidationSchema> = async (data) => {
+    const onSubmit: SubmitHandler<RegisterSchema> = async (data) => {
         await submitForm(data)
     }
 

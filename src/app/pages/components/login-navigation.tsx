@@ -7,7 +7,7 @@ export default function LoginNav(){
           <li className="p-4">Logo</li>
           <li className="justify-self-center self-center p-4 hover:cursor-pointer">English</li>
           <li className="justify-self-center self-center p-4 hover:cursor-pointer">Към сайта</li>
-          <li className="justify-self-center self-center p-4 hover:cursor-pointer">Мобилно приложение</li>
+          <li className="justify-self-center self-center p-4 text-center hover:cursor-pointer">Мобилно приложение</li>
           <li className="justify-self-center self-center p-4 text-center hover:cursor-pointer">Промени в Оу и тарифа</li>
           <li className="justify-self-center self-center p-4 hover:cursor-pointer">Помощ</li>
           <li className="justify-self-center self-center p-2"><button className="p-2 px-4 uppercase text-sm bg-gray-200 hover:cursor-pointer"><Link href="/pages/register">Регистрация</Link></button></li>
