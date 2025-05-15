@@ -5,6 +5,7 @@ import { registerSchema, RegisterSchema } from "../validations/registerSchema";
 import TextField from "./text-field";
 import {fields} from "../register-form-fields"
 
+
 export default function RegisterForm(){
 
     const {
@@ -32,6 +33,7 @@ export default function RegisterForm(){
             добавянето на достъп до ново физическо или юридическо лице става в банката.
             Ако сте забравили своето потребителско име и/или парола, заповядайте в банката, за да ги получите.
           </p>
+          <hr/>
           <p className="my-4 text-[13.5px] before-red-star">Задължителни полета</p>
 
           <div className="grid grid-cols-2">
@@ -45,12 +47,12 @@ export default function RegisterForm(){
             }
             
           </div>
-
+          <hr className=" text-gray-400"/>
           <p className="text-sm my-6">Необходимо е да запомните потребителското си име и парола, които току-що въведохте.След като
             потвърдите регистрацията в банката, те ще Ви служат за вход във виртуален банков клон(e-fibank).
           </p>
 
-          <input type="submit" className="rounded-xs py-2 uppercase text-white bg-blue-800 hover:cursor-pointer" value="Регистрирай се"/>
+          <input type="submit" className="rounded-xs py-2 uppercase text-white bg-blue-800 hover:cursor-pointer" value="Изпратете искане за регистрация"/>
 
         </form>
     )

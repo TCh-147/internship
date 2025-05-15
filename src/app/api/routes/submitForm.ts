@@ -4,7 +4,7 @@ import { RegisterSchema } from "app/pages/validations/registerSchema"
 
 export async function submitForm(registerData: RegisterSchema){
 
-
+  
     await fetch('http://localhost:1407/register', {
         method: 'POST',
         headers: {

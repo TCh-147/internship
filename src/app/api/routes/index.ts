@@ -4,7 +4,7 @@ import mongoose from "mongoose"
 import * as argon2 from "argon2"
 import jwt from "jsonwebtoken"
 import {secret} from "./secret_key.ts"
-// import User from "./models/user.ts"
+// import Users from "./models/user.ts"
 
 
 const UserSchema = new mongoose.Schema({
@@ -23,7 +23,7 @@ type registerUser = {
   username: string,
   password: string,
   egn: string,
-  LnchOrpassportNum: number,
+  LnchOrpassportNum?: number,
   fullNameCyrillic: string,
   fullNameLatin: string,
   email: string,
@@ -50,9 +50,6 @@ const connectDb = async () => {
 }
 connectDb()
 
-
-
-
 const app = express()
 const Users = mongoose.model("user", UserSchema)
 
@@ -68,6 +65,7 @@ app.post('/register', async (request, res) => {
       const registerData: registerUser = request.body
       registerData.password = await argon2.hash(registerData.password)
       const newUser = await Users.create(registerData)
+      console.log("new User: ", newUser)
         let usersCollection = null
         const client = new MongoClient("mongodb://localhost:27017/")
         await client.connect()
