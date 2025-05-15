@@ -66,21 +66,6 @@ app.post('/register', async (request, res) => {
       registerData.password = await argon2.hash(registerData.password)
       const newUser = await Users.create(registerData)
       console.log("new User: ", newUser)
-        let usersCollection = null
-        const client = new MongoClient("mongodb://localhost:27017/")
-        await client.connect()
-        const database = client.db("fibankdb")
-        let collection = await database.listCollections({}, { nameOnly: true }).toArray();
-        collection.filter((collectionName) => {
-          return collectionName.name === "users";
-        })
-        if (collection.length == 0) {
-          usersCollection = await database.createCollection("users")
-        } else {
-          usersCollection = await database.collection("users")
-        }
-        await usersCollection.insertOne(newUser)
-
       res.status(200).json(newUser)
     } catch (error) {
       res.status(400).json({message: error})
