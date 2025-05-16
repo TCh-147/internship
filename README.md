@@ -28,3 +28,10 @@ You can use this command to generate the secret key:
     node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 
 Or you can go to this website: https://numbergenerator.org/random-32-digit-hex-codes-generator
+
+
+## Missing modules
+
+You can install all modules by running the command:
+
+    npm install
