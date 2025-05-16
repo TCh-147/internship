@@ -1,1 +1,0 @@
-export const secret: string = "ada53e56bbb27ed9ec05f4546e5e75f49c0d7bb320c0d634645d0fda0a28e189"

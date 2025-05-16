@@ -1,9 +1,8 @@
 import express from "express"
-import { MongoClient } from "mongodb"
 import mongoose from "mongoose"
 import * as argon2 from "argon2"
 import jwt from "jsonwebtoken"
-import {secret} from "./secret_key.ts"
+import * as dotenv from "dotenv"
 // import Users from "./models/user.ts"
 
 
@@ -36,6 +35,7 @@ type loginUser = {
   password: string
 }
 
+dotenv.config()
 
 const dbUrl: string = "mongodb://localhost:27017/fibankdb"
 
@@ -60,25 +60,28 @@ app.use((req, res, next) => {
 
 app.use(express.json())
 
+
 app.post('/register', async (request, res) => {
     try {
       const registerData: registerUser = request.body
       registerData.password = await argon2.hash(registerData.password)
       const newUser = await Users.create(registerData)
       console.log("new User: ", newUser)
-      res.status(200).json(newUser)
+      res.status(200).json({message: "New user created."})
     } catch (error) {
       res.status(400).json({message: error})
     }
 })
+
 
 app.post('/login', async (request, res) => {
     try {
       const loginData: loginUser = request.body
       const findUser = await Users.findOne({username: loginData.username}).orFail()
       const checkPass: boolean = await argon2.verify(findUser.password, loginData.password)
+      const secretApi: string = process.env.API_JWT_SECRET ?? ""
         if(checkPass){
-          const token = jwt.sign(JSON.stringify(findUser), secret, {algorithm: 'HS256'})
+          const token = jwt.sign(JSON.stringify(findUser), secretApi, {algorithm: 'HS256'})
           res.status(200).json({token})
         }
     } catch (error) {

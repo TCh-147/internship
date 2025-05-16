@@ -1,9 +1,10 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {submitForm} from "app/api/routes/submitForm";
 import { registerSchema, RegisterSchema } from "../validations/registerSchema";
 import TextField from "./text-field";
-import {fields} from "../register-form-fields"
+import {fields} from "./fields/register-form-fields"
+import submitForm from "app/api/utilis/submitForm";
+import { toast, ToastContainer } from "react-toastify";
 
 
 export default function RegisterForm(){
@@ -18,7 +19,13 @@ export default function RegisterForm(){
 
 
     const onSubmit: SubmitHandler<RegisterSchema> = async (data) => {
-        await submitForm(data)
+        const resultMessage = await submitForm("/register", data)
+        if(resultMessage.success){
+          toast.success("Successful registration", {position: "top-center"})
+        }
+        else{
+          toast.error("Registration failed", {position: "top-center"})
+        }        
     }
 
     return(
@@ -27,6 +34,7 @@ export default function RegisterForm(){
           handleSubmit(onSubmit)
         } 
         className="grid grid-cols-1 justify-self-center w-2.5/6 mx-12 pt-0 p-6 border-2 rounded-xs border-gray-200">
+          <ToastContainer/>
           <p className="my-6 text-center text-2xl font-bold">Регистрация на нов потребител</p>
           <p className="text-sm">Тази регистрационна форма се попълва, само ако нямате потребителско име и парола
             за Виртуален банков клон (e-fibank) на ПИБ. Ако вече имате потребителско име и парола,

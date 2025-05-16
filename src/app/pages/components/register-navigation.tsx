@@ -10,7 +10,7 @@ export default function RegisterNav(){
           <li className="justify-self-center self-center p-4 text-center hover:cursor-pointer">Мобилно приложение</li>
           <li className="justify-self-center self-center p-4 text-center hover:cursor-pointer">Промени в Оу и тарифа</li>
           <li className="justify-self-center self-center p-4 hover:cursor-pointer">Помощ</li>
-          <li className="justify-self-center self-center p-2"><button className="p-2 px-4 uppercase text-sm bg-gray-200 hover:cursor-pointer"><Link href="/">Вход</Link></button></li>
+          <li className="justify-self-center self-center p-2"><button className="p-2 px-4 uppercase text-sm bg-gray-200 hover:cursor-pointer"><Link className="p-2 px-4" href="/">Вход</Link></button></li>
         </ul>
       </nav>
     )

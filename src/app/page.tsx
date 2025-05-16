@@ -4,6 +4,8 @@ import Login from "./pages/login/page";
 import LoginNav from "./pages/components/login-navigation";
 import FooterMain from "./pages/components/footer-main";
 import FooterMoreInfo from "./pages/components/footer-more-information";
+import { fields } from "./pages/components/fields/login-article-fields";
+import LoginArticle from "./pages/components/login-article";
 
 export default function Home() {
 
@@ -16,11 +18,12 @@ export default function Home() {
 
         <Login></Login>
 
-        <div className="w-80 mx-12">
-          <h2 className="text-2xl">Title</h2>
-          <p>Some info</p>
-          <p className="after-arrow-symbol">Прочетете повече</p>
-          <hr/>
+        <div className="w-90 mx-12 self-start">
+          {
+            fields.map(({title, description, moreInfo}) => (
+              <LoginArticle key={title} title={title} description={description} moreInfo={moreInfo}></LoginArticle>
+            ))
+          }
         </div>
 
       </div>
