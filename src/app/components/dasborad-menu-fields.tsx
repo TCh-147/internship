@@ -27,7 +27,7 @@ const MenuFields = ({title, dropDown, dropDownFields}: Props) => {
         <>
             <ul>
                 <li onMouseLeave={dropDown ? LeftDropDown : undefined} onMouseEnter={dropDown ? DropDown : undefined} 
-                className="relative px-4 py-2 text-[13pt] hover:cursor-pointer hover:bg-[#ECEEF1]">
+                className="relative px-4 py-2 text-[12pt] hover:cursor-pointer hover:bg-[#ECEEF1]">
                     <div className={`px-4 hover:text-blue-700 ${dropDown ? " after-arrow-symbol-absolute " : ""} ${active ? " text-blue-700" : ""}`}>{title}</div>
                     <div 
                     className={`${dropDown ? 
@@ -35,8 +35,8 @@ const MenuFields = ({title, dropDown, dropDownFields}: Props) => {
                         "hidden" : "absolute w-full top-0 -end-full bg-white border-1 border-gray-300 py-2"}` 
                     : "hidden"}`}>
                         {
-                            dropDownFields?.map(({title, section, line, dashboard}) => (
-                                <DropDownMenu key={title} title={title} section={section} line={line} dashboard={dashboard}/>
+                            dropDownFields?.map(({title, section, line}) => (
+                                <DropDownMenu key={title} title={title} section={section} line={line}/>
                             ))
                         }
                     </div>
