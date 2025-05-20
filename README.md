@@ -14,7 +14,7 @@ First, run the development server:
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-(Might not be needed after commiting toast messages)In another terminal go to /routes and start the server (it's running on port 1407)
+In another terminal go to /routes and start the server (it's running on port 1407)
 
     cd ./src/app/api/routes
     npm start
