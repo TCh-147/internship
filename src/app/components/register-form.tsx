@@ -21,10 +21,10 @@ export default function RegisterForm(){
     const onSubmit: SubmitHandler<RegisterSchema> = async (data) => {
         const resultMessage = await submitForm("/register", data)
         if(resultMessage.success){
-          toast.success("Successful registration", {position: "top-center"})
+          toast.success("Успешна регистрация", {position: "top-center"})
         }
         else{
-          toast.error("Registration failed", {position: "top-center"})
+          toast.error("Неуспешна регистрация", {position: "top-center"})
         }        
     }
 
