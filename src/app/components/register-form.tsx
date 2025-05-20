@@ -53,7 +53,6 @@ export default function RegisterForm(){
                 
               ))
             }
-            
           </div>
           <hr className=" text-gray-400"/>
           <p className="text-sm my-6">Необходимо е да запомните потребителското си име и парола, които току-що въведохте.След като

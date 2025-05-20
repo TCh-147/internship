@@ -117,14 +117,18 @@ export const registerSchema = z.object
       })
       if(!pass.match(/[A-Za-z]/)) err.addIssue({
         code: z.ZodIssueCode.custom,
-        message: "Паролата трябва да съдържа поне една буква на латиница!"
+        message: "Паролата трябва да съдържа буква на латиница!"
       })
       
     }),
     confirmPass: z.string()
-}).refine(
-    (data) => data.password === data.confirmPass, {message: "Паролата не съвпада!"}
-  )
+}).superRefine((data, error) => {
+    if(data.password !== data.confirmPass)error.addIssue({
+      code: z.ZodIssueCode.custom,
+      message: "Паролата не съвпада!",
+      path: ["confirmPass"]
+    })
+  })
 
 
 export type RegisterSchema = z.infer<typeof registerSchema>
