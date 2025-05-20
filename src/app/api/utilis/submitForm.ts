@@ -12,7 +12,6 @@ export default async function submitForm(route: string, formData:Object){
       },
       body: JSON.stringify(formData)
       })
-
       if(response.status == 400 || response.status == 401)
         return({success: false})
       else

@@ -20,7 +20,7 @@ export default function Login(){
         if(resultMessage.success){
           toast.success("Успешен вход!", {position: "top-center"})
         }
-        else{
+        else{ 
           toast.error("Неуспешен вход", {position: "top-center"})
         }
       }
