@@ -53,12 +53,17 @@ connectDb()
 const app = express()
 const Users = mongoose.model("user", UserSchema)
 
+
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000')
     next()
 })
 
 app.use(express.json())
+
+app.get('dashboard', (req, res) => {
+  res.json({message: 'dashboard'})
+})
 
 
 app.post('/register', async (request, res) => {
@@ -83,12 +88,12 @@ app.post('/login', async (request, res) => {
         if(checkPass){
           const token = jwt.sign(JSON.stringify(findUser), secretApi, {algorithm: 'HS256'})
           res.status(200).json({token})
-        }
+        }else res.status(401)
     } catch (error) {
         res.status(400).json({message: error})
     }
 })
 
 app.listen(1407, ()=> {
-    console.log('Server started on https://localhost:1407')
+    console.log('Server started on http://localhost:1407')
 })

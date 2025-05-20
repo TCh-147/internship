@@ -1,4 +1,4 @@
-import { RegisterSchema } from "app/pages/validations/registerSchema";
+import { RegisterSchema } from "app/components/validations/registerSchema";
 
 export interface FieldConfig {
   fieldName: keyof RegisterSchema;

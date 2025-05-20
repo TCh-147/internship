@@ -1,6 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { registerSchema, RegisterSchema } from "../validations/registerSchema";
+import { registerSchema, RegisterSchema } from "./validations/registerSchema";
 import TextField from "./text-field";
 import {fields} from "./fields/register-form-fields"
 import submitForm from "app/api/utilis/submitForm";

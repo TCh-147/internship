@@ -1,11 +1,11 @@
 'use client'
 
-import Login from "./pages/login/page";
-import LoginNav from "./pages/components/login-navigation";
-import FooterMain from "./pages/components/footer-main";
-import FooterMoreInfo from "./pages/components/footer-more-information";
-import { fields } from "./pages/components/fields/login-article-fields";
-import LoginArticle from "./pages/components/login-article";
+import Login from "./components/logn-form";
+import LoginNav from "./components/login-navigation";
+import FooterMain from "./components/footer-main";
+import FooterMoreInfo from "./components/footer-more-information";
+import { fields } from "./components/fields/login-article-fields";
+import LoginArticle from "./components/login-article";
 
 export default function Home() {
 

@@ -34,6 +34,14 @@ body {
   vertical-align: middle;
 }
 
+.after-arrow-symbol-absolute::after{
+  position: absolute;
+  right: 0;
+  padding-right: 1.5rem;
+  content: " >";
+  vertical-align: middle;
+}
+
 .before-copyright-symbol::before{
   content: "© ";
   vertical-align: middle;
@@ -42,4 +50,8 @@ body {
 .before-red-star::before{
   content: "* ";
   color: red;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  cursor: default;
 }
