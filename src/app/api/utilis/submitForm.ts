@@ -10,8 +10,10 @@ export default async function submitForm(route: string, formData:Object){
         headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData),
+      signal: AbortSignal.timeout(2000)
       })
+      
       if(response.status == 400 || response.status == 401)
         return({success: false})
       else

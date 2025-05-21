@@ -18,9 +18,11 @@ export default function Login(){
       const onSubmit: SubmitHandler<LoginSchema> = async (data) => {
         const resultMessage = await submitForm("/login", data)
         if(resultMessage.success){
+          console.log("Successful login")
           toast.success("Успешен вход!", {position: "top-center"})
         }
         else{ 
+          console.log("Unsuccessful login")
           toast.error("Неуспешен вход", {position: "top-center"})
         }
       }
