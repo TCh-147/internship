@@ -1,6 +1,6 @@
 import { useState } from "react"
-import DropDownMenu from "../common/drop-down-menu"
-import { settingsDashboardNavFields } from "../common/dropdown-fields"
+import DropDownMenu from "../components/common/drop-down-menu"
+import { settingsDashboardNavFields } from "../components/common/dropdown-fields"
 
 export default function DashboardNav(){
     const [hidden, setHidden] = useState(true)

@@ -1,4 +1,12 @@
-import { IDropDownFieldConfig, inquiriesDropDownFields, purchasesDropDownFields, withdrawalsDropDownFields, servicesDropDownFields, publicServicesDropDownFields, declarationsDropDownFields } from "../../common/dropdown-fields"
+import { 
+    IDropDownFieldConfig, 
+    inquiriesDropDownFields, 
+    purchasesDropDownFields, 
+    withdrawalsDropDownFields, 
+    servicesDropDownFields, 
+    publicServicesDropDownFields, 
+    declarationsDropDownFields 
+} from "app/components/common/dropdown-fields"
 
 export interface FieldConfig{
     title: string

@@ -2,10 +2,10 @@
 
 import FooterMain from "./components/common/footer-main";
 import FooterMoreInfo from "./components/common/footer-more-information";
-import { loginArticleFields } from "./components/login/login-article-fields";
+import { loginArticleFields } from "./login/login-article-fields";
 import LoginForm from "./components/forms/logn-form";
-import LoginArticle from "./components/login/login-article";
-import LoginNav from "./components/login/login-navigation";
+import LoginArticle from "./login/login-article";
+import LoginNav from "./login/login-navigation";
 
 export default function Home() {
 

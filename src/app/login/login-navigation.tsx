@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
-import { helpDropDownFields } from "../common/dropdown-fields";
-import DropDownMenu from "../common/drop-down-menu";
+import { helpDropDownFields } from "../components/common/dropdown-fields";
+import DropDownMenu from "../components/common/drop-down-menu";
 
 export default function LoginNav(){
   const [hidden, setHidden] = useState(true)

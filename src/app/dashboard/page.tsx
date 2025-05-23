@@ -1,13 +1,13 @@
 'use client'
 
-import SideMenu from "app/components/dashboard/dasborad-menu-fields"
-import DashboardNav from "app/components/dashboard/dashboard-navigation"
+import SideMenu from "app/dashboard/dasborad-menu-fields"
+import DashboardNav from "app/dashboard/dashboard-navigation"
 import FooterMain from "app/components/common/footer-main"
-import ModuleTopRow from "app/components/dashboard/dashboard-module-table"
-import Accounts from "app/components/dashboard/dashboard-accounts-sum"
-import { accountFields, forSignatureFields, cardsFields, awaitingPayments, lastFiveFields, creditsFields, depositFields } from "app/components/dashboard/fields/dashboard-modules-fields"
-import { sideMenuMainFields, sideMenuInfoFields, sideMenuAdditionalFields } from "app/components/dashboard/fields/dashboard-sidemenu-fields"
-import { accountsSumField } from "app/components/dashboard/fields/dashboard-accounts-sum-fields"
+import ModuleTopRow from "app/dashboard/dashboard-module-table"
+import Accounts from "app/dashboard/dashboard-accounts-sum"
+import { accountsSumField } from "./fields/dashboard-accounts-sum-fields"
+import { accountFields, forSignatureFields, cardsFields, awaitingPayments, lastFiveFields, creditsFields, depositFields } from "./fields/dashboard-modules-fields"
+import { sideMenuMainFields, sideMenuInfoFields, sideMenuAdditionalFields } from "./fields/dashboard-sidemenu-fields"
 
 export default function Dashboard(){
 

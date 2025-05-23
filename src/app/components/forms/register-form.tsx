@@ -4,7 +4,7 @@ import FormInputs from "./form-inputs";
 import submitForm from "app/api/utilis/submitForm";
 import { toast, ToastContainer } from "react-toastify";
 import { RegisterSchema, registerSchema } from "app/validations/registerSchema";
-import { registerFormFields } from "../register/register-form-fields";
+import { registerFormFields } from "../../register/register-form-fields";
 
 
 export default function RegisterForm(){
@@ -27,7 +27,7 @@ export default function RegisterForm(){
           toast.error("Неуспешна регистрация", {position: "top-center"})
         }        
     }
-    
+
     return(
         <form 
         onSubmit={

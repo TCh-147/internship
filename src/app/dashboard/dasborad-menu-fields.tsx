@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from "react"
-import DropDownMenu from "../common/drop-down-menu"
-import { IDropDownFieldConfig} from "../common/dropdown-fields"
+import DropDownMenu from "../components/common/drop-down-menu"
+import { IDropDownFieldConfig} from "../components/common/dropdown-fields"
 
 type Props = {
     title: string

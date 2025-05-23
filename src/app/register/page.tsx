@@ -2,7 +2,7 @@
 
 import FooterMain from "app/components/common/footer-main";
 import RegisterForm from "app/components/forms/register-form";
-import RegisterNav from "app/components/register/register-navigation";
+import RegisterNav from "app/register/register-navigation";
 
 
 
