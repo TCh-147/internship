@@ -4,9 +4,9 @@ export interface IDropDownFieldConfig{
     line?: boolean
 }
 
-// -------------- LOGIN FIELDS ---------------
+// -------------- MAIN NAVIGATION HELP FIELDS ---------------
 
-export const helpFields: IDropDownFieldConfig[] = [
+export const helpDropDownFields: IDropDownFieldConfig[] = [
     {title: "Помощни статии", section: "Информация"},
     {title: "Често задавани въпроси"},
     {title: "Съвети за сигурност", line: true},
@@ -17,7 +17,7 @@ export const helpFields: IDropDownFieldConfig[] = [
 
 // -------------- DASHBOARD SIDE MENU FIELDS ---------------
 
-export const inquiries: IDropDownFieldConfig[] = [
+export const inquiriesDropDownFields: IDropDownFieldConfig[] = [
     {title:"ПОС транзакции - по групи"},
     {title:"ПОС транзакции за период"},
     {title:"Салда по всички сметки SSO"},
@@ -29,7 +29,7 @@ export const inquiries: IDropDownFieldConfig[] = [
     {title:"Сесии"}
 ]
 
-export const purchases: IDropDownFieldConfig[] = [
+export const purchasesDropDownFields: IDropDownFieldConfig[] = [
     {title:"Нов кредитен превод", section: "Преводи"},
     {title:"Плащане от/към бюджета"},
     {title:"Директен дебит"},
@@ -45,19 +45,19 @@ export const purchases: IDropDownFieldConfig[] = [
     {title:"Получатели за преводи"},
 ]
 
-export const withdrawals: IDropDownFieldConfig[] = [
+export const withdrawalsDropDownFields: IDropDownFieldConfig[] = [
     {title: "Извлечение по сметка"},
     {title: "Извлечение по кредитна карта"}
 ] 
 
-export const services: IDropDownFieldConfig[] = [
+export const servicesDropDownFields: IDropDownFieldConfig[] = [
     {title: "Отчети по e-mail за сметка"},
     {title: "Извлечения по e-mail за карти"},
     {title: "Картови авторизации по e-mail"},
     {title: "Преводи по SWIFT по e-mail"}
 ]
 
-export const publicServices: IDropDownFieldConfig[] = [
+export const publicServicesDropDownFields: IDropDownFieldConfig[] = [
     {title: "Задължения очакващи плащания", section: "Плащане на задължения"},
     {title: "Плащане на задължения"},
     {title: "Плащане на общински данъци и такси"},
@@ -68,7 +68,7 @@ export const publicServices: IDropDownFieldConfig[] = [
     {title: "История на плащания", section: "Други"}
 ]
 
-export const declarations: IDropDownFieldConfig[] = [
+export const declarationsDropDownFields: IDropDownFieldConfig[] = [
     {title: "Декларация в НОИ"},
     {title: "Статистическа форма 100 000 лв."},
     {title: "Декларация за произход на средствата"},
@@ -77,7 +77,7 @@ export const declarations: IDropDownFieldConfig[] = [
 
 // -------------- DASHBOARD NAVIGATION FIELDS ---------------
 
-export const settingsDashboard: IDropDownFieldConfig[] = [
+export const settingsDashboardNavFields: IDropDownFieldConfig[] = [
     {title: "Лични данни"},
     {title: "Общи настройки"},
     {title: "Настройки на сметка"},

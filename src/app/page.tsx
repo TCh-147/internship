@@ -1,11 +1,11 @@
 'use client'
 
-import Login from "./components/logn-form";
-import LoginNav from "./components/login-navigation";
-import FooterMain from "./components/footer-main";
-import FooterMoreInfo from "./components/footer-more-information";
-import { fields } from "./components/fields/login-article-fields";
-import LoginArticle from "./components/login-article";
+import FooterMain from "./components/common/footer-main";
+import FooterMoreInfo from "./components/common/footer-more-information";
+import { loginArticleFields } from "./components/login/login-article-fields";
+import LoginForm from "./components/forms/logn-form";
+import LoginArticle from "./components/login/login-article";
+import LoginNav from "./components/login/login-navigation";
 
 export default function Home() {
 
@@ -16,11 +16,11 @@ export default function Home() {
 
       <div className="grid grid-cols-2 items-center my-12">
 
-        <Login></Login>
+        <LoginForm></LoginForm>
 
         <div className="w-90 mx-12 self-start">
           {
-            fields.map(({title, description, moreInfo}) => (
+            loginArticleFields.map(({title, description, moreInfo}) => (
               <LoginArticle key={title} title={title} description={description} moreInfo={moreInfo}></LoginArticle>
             ))
           }

@@ -1,11 +1,13 @@
 'use client'
 
-import MenuFields from "app/components/dasborad-menu-fields"
-import DashboardNav from "app/components/dashboard-navigation"
-import { fieldsAdditional } from "app/components/fields/dashboard-additional- fields"
-import { fieldsInfo } from "app/components/fields/dashboard-info-fields"
-import { fieldsMain } from "app/components/fields/dashboard-main-fields"
-import FooterMain from "app/components/footer-main"
+import SideMenu from "app/components/dashboard/dasborad-menu-fields"
+import DashboardNav from "app/components/dashboard/dashboard-navigation"
+import FooterMain from "app/components/common/footer-main"
+import ModuleTopRow from "app/components/dashboard/dashboard-module-table"
+import Accounts from "app/components/dashboard/dashboard-accounts-sum"
+import { accountFields, forSignatureFields, cardsFields, awaitingPayments, lastFiveFields, creditsFields, depositFields } from "app/components/dashboard/fields/dashboard-modules-fields"
+import { sideMenuMainFields, sideMenuInfoFields, sideMenuAdditionalFields } from "app/components/dashboard/fields/dashboard-sidemenu-fields"
+import { accountsSumField } from "app/components/dashboard/fields/dashboard-accounts-sum-fields"
 
 export default function Dashboard(){
 
@@ -24,28 +26,86 @@ export default function Dashboard(){
                     <hr className="mt-2 pb-4 text-gray-300"/>
                     <button className="bg-red-500 w-full p-2 rounded-xs text-sm uppercase text-white">Нов превод</button>
                     {
-                        fieldsMain.map(({title, dropDown, dropDownFields}) => (
-                            <MenuFields key={title} title={title} dropDown={dropDown} dropDownFields={dropDownFields}/>
+                        sideMenuMainFields.map(({title, dropDown, dropDownFields}) => (
+                            <SideMenu key={title} title={title} dropDown={dropDown} dropDownFields={dropDownFields}/>
                         ))
                     }
                     <hr className="mt-2 pb-4 text-gray-300"/>
                     <h2 className="p-4 px-6 pb-2 text-base uppercase text-[#808080]">Информация за Fibank</h2>
                     {
-                        fieldsInfo.map(({title}) => (
-                            <MenuFields key={title} title={title}/>
+                        sideMenuInfoFields.map(({title}) => (
+                            <SideMenu key={title} title={title}/>
                         ))
                     }
                     <hr className="mt-2 pb-4 text-gray-300"/>
                     <h2 className="p-4 px-6 pb-2 text-base uppercase text-[#808080]">Допълнително</h2>
                     {
-                        fieldsAdditional.map(({title}) => (
-                            <MenuFields key={title} title={title} />
+                        sideMenuAdditionalFields.map(({title}) => (
+                            <SideMenu key={title} title={title} />
                         ))
                     }
                 </div>
                 <div className="col-span-3">
                     <p className="py-2 px-4 border-b-1 border-gray-300 text-gray-500">Начало</p>
+                    <div className="grid grid-cols-3">
+                       {
+                        accountsSumField.map(({title, sum, currency}) => {
+                            return <Accounts key={title} title={title} sum={sum} currency={currency} />
+                        })
+                       }
+                       
+                    </div>
+                    <div className="flex flex-row">
+                        {
+                            accountFields.map(({title}) => {
+                                return <ModuleTopRow key={title} title={title} />
+                            })
+                        } 
+                    </div>
+                    <div className="flex flex-row">
+                        {
+                            forSignatureFields.map(({title}) => {
+                                return <ModuleTopRow key={title} title={title} />
+                            })
+                        } 
+                    </div>
+                    <div className="flex flex-row">
+                        {
+                            cardsFields.map(({title}) => {
+                                return <ModuleTopRow key={title} title={title} />
+                            })
+                        } 
+                    </div>
+                    <div className="flex flex-row">
+                        {
+                            awaitingPayments.map(({title}) => {
+                                return <ModuleTopRow key={title} title={title} />
+                            })
+                        } 
+                    </div>
+                    <div className="flex flex-row">
+                        {
+                            lastFiveFields.map(({title}) => {
+                                return <ModuleTopRow key={title} title={title} />
+                            })
+                        } 
+                    </div>
+                    <div className="flex flex-row">
+                        {
+                            creditsFields.map(({title}) => {
+                                return <ModuleTopRow key={title} title={title} />
+                            })
+                        } 
+                    </div>
+                    <div className="flex flex-row">
+                        {
+                            depositFields.map(({title}) => {
+                                return <ModuleTopRow key={title} title={title} />
+                            })
+                        } 
+                    </div>
                 </div>
+                
             </div>
 
             <FooterMain/>

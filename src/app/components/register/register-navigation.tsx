@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
-import { helpFields } from "./fields/dropdown-fields";
-import DropDownMenu from "./drop-down-menu";
+import { helpDropDownFields } from "../common/dropdown-fields";
+import DropDownMenu from "../common/drop-down-menu";
 
 export default function RegisterNav(){
     const [hidden, setHidden] = useState(true)
@@ -29,7 +29,7 @@ export default function RegisterNav(){
             <div className={`p-4 hover:text-blue-700 ${active ? "text-blue-700" : ""}`}>Помощ</div>
             <div className={`${hidden ? "hidden" : "absolute bg-white border-1 border-gray-300 py-2"}`}>
               {
-                helpFields.map(({title, section, line}) => 
+                helpDropDownFields.map(({title, section, line}) => 
                 (
                   <DropDownMenu key={title} title={title} section={section} line={line} />
                 ))

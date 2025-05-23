@@ -8,12 +8,12 @@ export default async function submitForm(route: string, formData:Object){
       {
         method: "POST",
         headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(formData),
       signal: AbortSignal.timeout(2000)
       })
-      
+      console.log(response.headers)
       if(response.status == 400 || response.status == 401)
         return({success: false})
       else

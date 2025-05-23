@@ -1,10 +1,10 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { registerSchema, RegisterSchema } from "./validations/registerSchema";
-import TextField from "./text-field";
-import {fields} from "./fields/register-form-fields"
+import FormInputs from "./form-inputs";
 import submitForm from "app/api/utilis/submitForm";
 import { toast, ToastContainer } from "react-toastify";
+import { RegisterSchema, registerSchema } from "app/validations/registerSchema";
+import { registerFormFields } from "../register/register-form-fields";
 
 
 export default function RegisterForm(){
@@ -12,11 +12,11 @@ export default function RegisterForm(){
     const {
         register,
         handleSubmit,
+        watch,
         formState: {errors}
     } = useForm({
         resolver: zodResolver(registerSchema)
     })
-
 
     const onSubmit: SubmitHandler<RegisterSchema> = async (data) => {
         const resultMessage = await submitForm("/register", data)
@@ -27,7 +27,7 @@ export default function RegisterForm(){
           toast.error("Неуспешна регистрация", {position: "top-center"})
         }        
     }
-
+    
     return(
         <form 
         onSubmit={
@@ -41,16 +41,16 @@ export default function RegisterForm(){
             добавянето на достъп до ново физическо или юридическо лице става в банката.
             Ако сте забравили своето потребителско име и/или парола, заповядайте в банката, за да ги получите.
           </p>
-          <hr/>
-          <p className="my-4 text-[13.5px] before-red-star">Задължителни полета</p>
+          <hr className="mt-4"/>
+          <p className="my-4 text-[13.5px] before:content-['*'] before:text-red-500 before:pr-1">Задължителни полета</p>
 
           <div className="grid grid-cols-2">
             {
-              fields.map(({fieldName, label, type, required}) => (
+              registerFormFields.map(({fieldName, label, type, required, progress}) => (
                 
-                  <TextField key={fieldName} register={register} 
-                  errors={errors} label={label} fieldName={fieldName} type={type} required={required}></TextField>
-                
+                  <FormInputs key={fieldName} register={register} 
+                  errors={errors} label={label} fieldName={fieldName} type={type} required={required} progress={progress} watch={watch}></FormInputs>
+                  
               ))
             }
           </div>

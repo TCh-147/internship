@@ -14,8 +14,8 @@ export default function FooterMoreInfo(){
             </p>
             <h3 className="text-gray-700 font-semibold">Вижте къде се намираме:</h3>
             <div className="flex flex-row justify-center m-auto my-4">
-              <div className="px-4 after-arrow-symbol border-r-2 border-gray-300 hover:cursor-pointer hover:text-blue-700 hover:underline">Клонове</div>
-              <div className="px-4 after-arrow-symbol hover:cursor-pointer hover:text-blue-700 hover:underline">Банкомати</div>
+              <div className="px-4 after:content-['>'] after:pl-1 after:align-center border-r-2 border-gray-300 hover:cursor-pointer hover:text-blue-700 hover:underline">Клонове</div>
+              <div className="px-4 after:content-['>'] after:pl-1 after:align-center hover:cursor-pointer hover:text-blue-700 hover:underline">Банкомати</div>
             </div>
           </div>
 

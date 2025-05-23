@@ -1,13 +1,15 @@
-import { RegisterSchema } from "app/components/validations/registerSchema";
+import { RegisterSchema } from "app/validations/registerSchema";
 
 export interface FieldConfig {
   fieldName: keyof RegisterSchema;
   label: string;
   type: string;
   required?: boolean;
+  progress?: boolean;
+  watch?: any;
 }
 
-export const fields: FieldConfig[] = [
+export const registerFormFields: FieldConfig[] = [
   { fieldName: "egn",            label: "ЕГН",                       type: "text",     required: true },
   { fieldName: "lnchOrPassport", label: "ЛНЧ или паспорт",          type: "text" },
   { fieldName: "fullNameCyrillic", label: "Име и фамилия на кирилица", type: "text", required: true },
@@ -16,6 +18,6 @@ export const fields: FieldConfig[] = [
   { fieldName: "phoneNum",       label: "Телефон",                   type: "tel",      required: true },
   { fieldName: "address",        label: "Адрес",                     type: "text",     required: true },
   { fieldName: "username",       label: "Потребителско име",          type: "text",     required: true },
-  { fieldName: "password",       label: "Парола за вход",             type: "password", required: true },
+  { fieldName: "password",       label: "Парола за вход",             type: "password", required: true, progress: true },
   { fieldName: "confirmPass",    label: "Повторете паролата",         type: "password", required: true },
 ];

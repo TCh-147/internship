@@ -87,7 +87,8 @@ app.post('/login', async (request, res) => {
       const secretApi: string = process.env.API_JWT_SECRET ?? ""
         if(checkPass){
           const token = jwt.sign(JSON.stringify(findUser), secretApi, {algorithm: 'HS256'})
-          res.status(200).json({token})
+          console.log(token)
+          res.status(200).json({message : token})
         }else res.status(401)
     } catch (error) {
         res.status(400).json({message: error})

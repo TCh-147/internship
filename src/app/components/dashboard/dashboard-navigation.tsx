@@ -1,6 +1,6 @@
 import { useState } from "react"
-import DropDownMenu from "./drop-down-menu"
-import { settingsDashboard } from "./fields/dropdown-fields"
+import DropDownMenu from "../common/drop-down-menu"
+import { settingsDashboardNavFields } from "../common/dropdown-fields"
 
 export default function DashboardNav(){
     const [hidden, setHidden] = useState(true)
@@ -28,7 +28,7 @@ export default function DashboardNav(){
                     <div className={`p-4 uppercase hover:text-blue-700 ${active ? "text-blue-700" : ""}`}>Настройки</div>
                     <div className={`${hidden ? "hidden" : "absolute bg-white border-1 border-gray-300 py-2"}`}>
                         {
-                            settingsDashboard.map(({title, section, line}) => (
+                            settingsDashboardNavFields.map(({title, section, line}) => (
                                 <DropDownMenu key={title} title={title} section={section} line={line} />
                             ))
                         }

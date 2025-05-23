@@ -1,8 +1,10 @@
 'use client'
 
-import FooterMain from "../../components/footer-main.tsx";
-import RegisterNav from "../../components/register-navigation.tsx";
-import RegisterForm from "../../components/register-form.tsx";
+import FooterMain from "app/components/common/footer-main";
+import RegisterForm from "app/components/forms/register-form";
+import RegisterNav from "app/components/register/register-navigation";
+
+
 
 export default function Register() {
 
