@@ -7,88 +7,88 @@ export interface IDropDownFieldConfig{
 // -------------- MAIN NAVIGATION HELP FIELDS ---------------
 
 export const helpDropDownFields: IDropDownFieldConfig[] = [
-    {title: "Помощни статии", section: "Информация"},
-    {title: "Често задавани въпроси"},
-    {title: "Съвети за сигурност", line: true},
-    {title: "0700 12 777", section: "Връзка с нас"},
-    {title: "help@fibank.bg"},
-    {title: "Онлайн чат"},
+    {title: "MainNavHelp.Titles.articles", section: "MainNavHelp.Sections.information"},
+    {title: "MainNavHelp.Titles.fqa"},
+    {title: "MainNavHelp.Titles.security", line: true},
+    {title: "MainNavHelp.Titles.phone", section: "MainNavHelp.Sections.contact"},
+    {title: "MainNavHelp.Titles.email"},
+    {title: "MainNavHelp.Titles.chat"},
 ]
 
 // -------------- DASHBOARD SIDE MENU FIELDS ---------------
 
 export const inquiriesDropDownFields: IDropDownFieldConfig[] = [
-    {title:"ПОС транзакции - по групи"},
-    {title:"ПОС транзакции за период"},
-    {title:"Салда по всички сметки SSO"},
-    {title:"Дневен отчет за бюдж. разпродател"},
-    {title:"Извършени услуги за клиент"},
-    {title:"Изпратени SMS нотификации"},
-    {title:"Дължими суми от такси"},
-    {title:"Преводи по SWIFT"},
-    {title:"Сесии"}
+    {title:"DashboardSideMenu.Inquiries.Titles.posGroups"},
+    {title:"DashboardSideMenu.Inquiries.Titles.posPeriod"},
+    {title:"DashboardSideMenu.Inquiries.Titles.balanceSSO"},
+    {title:"DashboardSideMenu.Inquiries.Titles.dailyReport"},
+    {title:"DashboardSideMenu.Inquiries.Titles.services"},
+    {title:"DashboardSideMenu.Inquiries.Titles.sentSMS"},
+    {title:"DashboardSideMenu.Inquiries.Titles.feesDue"},
+    {title:"DashboardSideMenu.Inquiries.Titles.swift"},
+    {title:"DashboardSideMenu.Inquiries.Titles.sessions"}
 ]
 
 export const purchasesDropDownFields: IDropDownFieldConfig[] = [
-    {title:"Нов кредитен превод", section: "Преводи"},
-    {title:"Плащане от/към бюджета"},
-    {title:"Директен дебит"},
-    {title:"Масов превод"},
-    {title:"Преводи от файл"},
-    {title:"Нов периодичен превод"},
-    {title:"Плащания към СЕБРА"},
-    {title:"Кредитен превод CY"},
-    {title:"Вътрешноклонов превод CY", line: true},
-    {title:"Покупка/продажба на валута", section:"Покупка/продажба на ваута"},
-    {title:"Договаряне на курс", line: true},
-    {title:"Регистър на пер. преводи", section: "Регистри"},
-    {title:"Получатели за преводи"},
+    {title:"DashboardSideMenu.Purchases.Titles.newCreditTransfer", section: "DashboardSideMenu.Purchases.Sections.transfers"},
+    {title:"DashboardSideMenu.Purchases.Titles.budgetPayment"},
+    {title:"DashboardSideMenu.Purchases.Titles.directDebit"},
+    {title:"DashboardSideMenu.Purchases.Titles.bulkTransfer"},
+    {title:"DashboardSideMenu.Purchases.Titles.fileTransfers"},
+    {title:"DashboardSideMenu.Purchases.Titles.newRecurringTransfer"},
+    {title:"DashboardSideMenu.Purchases.Titles.sebraPayments"},
+    {title:"DashboardSideMenu.Purchases.Titles.cyCreditTransfer"},
+    {title:"DashboardSideMenu.Purchases.Titles.cyIntraBranchTransfer", line: true},
+    {title:"DashboardSideMenu.Purchases.Titles.currencyExchange", section:"DashboardSideMenu.Purchases.Sections.currencyOperations"},
+    {title:"DashboardSideMenu.Purchases.Titles.rateNegotiation", line: true},
+    {title:"DashboardSideMenu.Purchases.Titles.recurringTransferRegister", section: "DashboardSideMenu.Purchases.Sections.registers"},
+    {title:"DashboardSideMenu.Purchases.Titles.transferRecipients"},
 ]
 
 export const withdrawalsDropDownFields: IDropDownFieldConfig[] = [
-    {title: "Извлечение по сметка"},
-    {title: "Извлечение по кредитна карта"}
+    {title: "DashboardSideMenu.Withdrawals.Titles.accountStatement"},
+    {title: "DashboardSideMenu.Withdrawals.Titles.creditCardStatement"}
 ] 
 
 export const servicesDropDownFields: IDropDownFieldConfig[] = [
-    {title: "Отчети по e-mail за сметка"},
-    {title: "Извлечения по e-mail за карти"},
-    {title: "Картови авторизации по e-mail"},
-    {title: "Преводи по SWIFT по e-mail"}
+    {title: "DashboardSideMenu.Services.Titles.emailAccountReports"},
+    {title: "DashboardSideMenu.Services.Titles.emailCardStatements"},
+    {title: "DashboardSideMenu.Services.Titles.emailCardAuthorizations"},
+    {title: "DashboardSideMenu.Services.Titles.emailSwiftTransfers"}
 ]
 
 export const publicServicesDropDownFields: IDropDownFieldConfig[] = [
-    {title: "Задължения очакващи плащания", section: "Плащане на задължения"},
-    {title: "Плащане на задължения"},
-    {title: "Плащане на общински данъци и такси"},
-    {title: "Еднократно плащане", line: true},
-    {title: "Добавяне на абонатна сметка", section: "Абонатни сметки"},
-    {title: "Регистрирани абонатни сметки", line: true},
-    {title: "Известия по e-mail"},
-    {title: "История на плащания", section: "Други"}
+    {title: "DashboardSideMenu.PublicServices.Titles.pendingPayments", section: "DashboardSideMenu.PublicServices.Sections.payDues"},
+    {title: "DashboardSideMenu.PublicServices.Titles.payDues"},
+    {title: "DashboardSideMenu.PublicServices.Titles.municipalTaxes"},
+    {title: "DashboardSideMenu.PublicServices.Titles.oneTimePayment", line: true},
+    {title: "DashboardSideMenu.PublicServices.Titles.addSubscriberAccount", section: "DashboardSideMenu.PublicServices.Sections.subscriberAccounts"},
+    {title: "DashboardSideMenu.PublicServices.Titles.registeredSubscribers", line: true},
+    {title: "DashboardSideMenu.PublicServices.Titles.emailNotifications"},
+    {title: "DashboardSideMenu.PublicServices.Titles.paymentHistory", section: "DashboardSideMenu.PublicServices.Sections.other"}
 ]
 
 export const declarationsDropDownFields: IDropDownFieldConfig[] = [
-    {title: "Декларация в НОИ"},
-    {title: "Статистическа форма 100 000 лв."},
-    {title: "Декларация за произход на средствата"},
-    {title: "Декларация за презгранични преводи"}
+    {title: "DashboardSideMenu.Declarations.Titles.noiDeclaration"},
+    {title: "DashboardSideMenu.Declarations.Titles.statisticalForm100k"},
+    {title: "DashboardSideMenu.Declarations.Titles.fundOriginDeclaration"},
+    {title: "DashboardSideMenu.Declarations.Titles.crossBorderTransferDeclaration"}
 ]
 
 // -------------- DASHBOARD NAVIGATION FIELDS ---------------
 
 export const settingsDashboardNavFields: IDropDownFieldConfig[] = [
-    {title: "Лични данни"},
-    {title: "Общи настройки"},
-    {title: "Настройки на сметка"},
-    {title: "Настройки на депозит"},
-    {title: "Настройки на карта"},
-    {title: "3D сигурност на карти"},
-    {title: "Промяна на парола"},
-    {title: "Регистриране на сертификат"},
-    {title: "Регистриране на КЕП"},
-    {title: "Промяна ПИН TOKEN"},
-    {title: "Email и SMS известяване"},
-    {title: "SMS известяване за карти"},
-    {title: "Мобилно приложение Fibank"}
+    {title: "DashboardNav.Settings.Titles.personal"},
+    {title: "DashboardNav.Settings.Titles.general"},
+    {title: "DashboardNav.Settings.Titles.account"},
+    {title: "DashboardNav.Settings.Titles.deposit"},
+    {title: "DashboardNav.Settings.Titles.card"},
+    {title: "DashboardNav.Settings.Titles.card3dSecure"},
+    {title: "DashboardNav.Settings.Titles.password"},
+    {title: "DashboardNav.Settings.Titles.certRegister"},
+    {title: "DashboardNav.Settings.Titles.qesRegister"},
+    {title: "DashboardNav.Settings.Titles.tokenPin"},
+    {title: "DashboardNav.Settings.Titles.emailSms"},
+    {title: "DashboardNav.Settings.Titles.cardSms"},
+    {title: "DashboardNav.Settings.Titles.mobileApp"}
 ]

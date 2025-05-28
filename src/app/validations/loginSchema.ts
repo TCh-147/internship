@@ -3,10 +3,10 @@ import EmptyFieldErrorMessage from "./empty-field-validation"
 
 export const loginSchema = z.object({
     username: z.string().superRefine((name, err) => {
-        EmptyFieldErrorMessage(name, "Моля, въведете потребителско име", err)
+        EmptyFieldErrorMessage(name, "Errors.emptyUsername", err)
     }),
     password: z.string().superRefine((pass, err) => {
-        EmptyFieldErrorMessage(pass, "Моля, въведете парола", err)
+        EmptyFieldErrorMessage(pass, "Errors.emptyPassword", err)
     })
 })
 

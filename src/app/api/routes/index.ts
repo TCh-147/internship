@@ -1,4 +1,5 @@
 import express from "express"
+import type{ NextFunction, Request, Response } from "express"
 import mongoose from "mongoose"
 import * as argon2 from "argon2"
 import jwt from "jsonwebtoken"
@@ -61,11 +62,6 @@ app.use((req, res, next) => {
 
 app.use(express.json())
 
-app.get('dashboard', (req, res) => {
-  res.json({message: 'dashboard'})
-})
-
-
 app.post('/register', async (request, res) => {
     try {
       const registerData: registerUser = request.body
@@ -84,15 +80,33 @@ app.post('/login', async (request, res) => {
       const loginData: loginUser = request.body
       const findUser = await Users.findOne({username: loginData.username}).orFail()
       const checkPass: boolean = await argon2.verify(findUser.password, loginData.password)
-      const secretApi: string = process.env.API_JWT_SECRET ?? ""
+      const secretKey: string = process.env.API_JWT_SECRET ?? ""
         if(checkPass){
-          const token = jwt.sign(JSON.stringify(findUser), secretApi, {algorithm: 'HS256'})
-          console.log(token)
-          res.status(200).json({message : token})
+          const token = jwt.sign(JSON.stringify(findUser), secretKey, {algorithm: 'HS256'})
+          res.status(200).json(token)
         }else res.status(401)
     } catch (error) {
         res.status(400).json({message: error})
     }
+})
+
+const authenticate = function authenticateToken(req: Request, res: Response, next: NextFunction){
+  try {
+    const authHeader = req.headers.authorization || "";
+    const token = authHeader && authHeader.split(' ')[1].replace('"', "").replace('"', "");
+    const secretKey: string = process.env.API_JWT_SECRET ?? "";
+    const userData = jwt.verify(token, secretKey);
+    req.body = userData
+    next();
+  } catch (error) {
+    res.status(400).json({messages: error})
+  }
+}
+
+app.get('/dashboard', authenticate, (req, res) => {
+  const userData = req.body
+  console.log("Get request after authentications: ", userData)
+  res.status(200)
 })
 
 app.listen(1407, ()=> {

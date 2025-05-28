@@ -21,8 +21,7 @@
       }
     ],
     "paths": {
-      "@/*": ["/*"],
-      "@dictionaries/*": ["dictionaries/*"]
+      "@/*": ["/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "api/mongodb.js", "src/app/pages/test/page.jsx", "src/app/api/app.ts"],

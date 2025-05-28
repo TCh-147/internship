@@ -1,8 +1,9 @@
 'use client'
 
+import DropDownMenu from "app/components/common/drop-down-menu"
+import { IDropDownFieldConfig } from "app/components/common/dropdown-fields"
+import { useTranslations } from "next-intl"
 import { useState } from "react"
-import DropDownMenu from "../components/common/drop-down-menu"
-import { IDropDownFieldConfig} from "../components/common/dropdown-fields"
 
 type Props = {
     title: string
@@ -11,6 +12,7 @@ type Props = {
 }
 
 const SideMenu = ({title, dropDown, dropDownFields}: Props) => {
+    const t = useTranslations('Dashboard.Menu.SideMenu')
     const [hidden, setHidden] = useState(true)
     const [active, setActive] = useState(false) 
 
@@ -28,7 +30,7 @@ const SideMenu = ({title, dropDown, dropDownFields}: Props) => {
             <ul>
                 <li onMouseLeave={dropDown ? LeftDropDown : undefined} onMouseEnter={dropDown ? DropDown : undefined} 
                 className="relative px-4 py-2 text-[12pt] hover:cursor-pointer hover:bg-[#ECEEF1]">
-                    <div className={`px-4 hover:text-blue-700 ${dropDown ? "after:absolute after:right-0 after:content-['>'] after:pr-4 after:align-center " : ""} ${active ? " text-blue-700" : ""}`}>{title}</div>
+                    <div className={`px-4 hover:text-blue-700 ${dropDown ? "after:absolute after:right-0 after:content-['>'] after:pr-4 after:align-center " : ""} ${active ? " text-blue-700" : ""}`}>{t(title)}</div>
                     <div 
                     className={`${dropDown ? 
                     `${hidden ? 

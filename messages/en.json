@@ -1,0 +1,373 @@
+{
+    "Login": {
+        "Nav" : {
+            "Language" : "Български",
+            "Site" : "Site",
+            "MobileApp" : "Mobile application",
+            "ChangesInTariffs" : "Changes in Ow and tariff",
+            "Help" : "Help",
+            "Button" : "Register"
+        },
+        "Articles" : {
+            "First" : {
+                "title" : "IMPORTANT!",
+                "description" : "PIRB AD NOTIFIES its CARDHOLDERS that there is information about received fake emails that...",
+                "moreInfo" : "Read more"
+            },
+            "Second" : {
+                "title" : "Check out the system",
+                "description" : "Check out and experience online banking with our interactive demo version.",
+                "moreInfo" : "DEMO VERSION"
+            },
+            "Third" : {
+                "title" : "Token Banking",
+                "description" : "Mobility, convenience, and security in one, with our Token device for generating one-time passwords for login",
+                "moreInfo" : "Learn more"
+            }
+        }
+    },
+    "Register": {
+        "Nav" : {
+            "Language" : "Български",
+            "Site" : "Site",
+            "MobileApp" : "Mobile application",
+            "ChangesInTariffs" : "Changes in Ow and tariff",
+            "Help" : "Help",
+            "Button" : "Login"
+        }
+    },
+    "FooterMain" : {
+        "account" : "How to create an account",
+        "sso" : "Single Sign-On (SSO)",
+        "registration" : "Registration process",
+        "signature" : "electronic signature",
+        "taxesFees" : "Taxes and fees",
+        "documents" : "Documents",
+        "copyright" : "First Investment Bank 2009-2015."
+    },
+    "FooterAdditional" : {
+        "Text" : {
+            "questions" : "For any questions, our staff is waiting for you at:",
+            "callTax" : "* Calls to a national number are charged according to the rates set by your operator for calls to a 0700 type number Vivacom. For Vivacom subscribers, calls to this number are charged as calls to a landline number in the Vivacom network. ",
+            "findUs" : "See where we are:"
+        },
+        "Info" : {
+            "phone" : {
+                "label" : "Phone: ",
+                "number" : "0700 21 7777 ",
+                "allDay" : " (round-the-clock)*"
+            },
+            "email" : {
+                "label" : "E-mail: ",
+                "address" : "e-bank@fibank.bg"
+            },
+            "chat" : {
+                "label" : "Chat: ",
+                "contactUs" : "Write to us"
+            }
+        },
+        "Where" : {
+            "branch" : "Branches",
+            "atms" : "ATMs"
+        }
+    },
+    "Forms" : {
+        "Register" : {
+            "Labels" : {
+                "egn" : "EGN",
+                "lnch" : "LNCH or passport",
+                "cyrillic" : "Name and surname in Cyrillic",
+                "latin" : "Name and surname in Latin",
+                "email" : "Email",
+                "phone" : "Phone number",
+                "address" : "Address",
+                "username" : "Username",
+                "password" : "Password",
+                "confirmPass" : "Confirm password"
+            },
+            "Toasts" : {
+                "success" : "Successful registration!",
+                "fail" : "Failed to register"
+            },
+            "Errors" : {
+                "emptyEGN": "Please enter your EGN!",
+                "invalidEGN": "Invalid EGN!",
+                "emptyName": "Please enter a name!",
+                "invalidNameCyrillic": "Please enter the name in Cyrillic!",
+                "invalidNameLatin": "Please enter the name in Latin!",
+                "invalidLnch": "Invalid LNCH!",
+                "emptyPhone": "Please enter a phone number!",
+                "invalidPhone": "Invalid phone number!",
+                "emptyEmail": "Please enter an email address!",
+                "invalidEmail": "Invalid email address!",
+                "emptyAddress": "Please enter an address!",
+                "invalidAddress": "Please enter a valid address!",
+                "usernameShort": "The username is too short!",
+                "usernameNotLatin": "Please enter the username in Latin!",
+                "passwordShort": "The password is too short!",
+                "passwordLong": "The password is too long!",
+                "passwordNotLatin": "The password must contain Latin characters!",
+                "passwordNoNumber": "The password must contain at least one digit!",
+                "emptyConfirmPassword": "Please confirm the password!",
+                "passwordNotMatch": "Passwords do not match!",
+                "emptyUsername": "Please enter a username!",
+                "emptyPassword": "Please enter a password!"
+            },
+            "Title" : "New user registration",
+            "Description" : "This registration form must be completed only if you do not have a username and password for the FIB e-banking service. If you already have a username and password, adding access to a new individual or legal entity is done at the bank. If you have forgotten your username and/or password, please visit the bank to obtain them.",
+            "RequiredInput" : "Required fields",
+            "Reminder" : "You need to remember the username and password you just entered. After confirming your registration with the bank, they will be used to log in to the virtual bank branch (e-fibank).",
+            "Button" : "Send a registration request"
+        },
+        "Login" : {
+            "Toasts" : {
+                "success" : "Successful login!",
+                "fail" : "Failed login"
+            },
+            "Labels" : {
+                "username" : "Username:",
+                "password" : "Password:",
+                "button" : "Login"
+            },
+            "Errors" : {
+                "emptyUsername" : "Please enter a username",
+                "emptyPassword" : "Please enter a password"
+            },
+            "Title" : "Virtual Bank Branch (e-fibank)"
+        }
+    },
+    "DropDown" : {
+        "MainNavHelp" : {
+            "Titles" : {
+                "articles" : "Help articles",
+                "fqa" : "frequently asked questions",
+                "security" : "Security tips",
+                "phone" : "0700 12 777",
+                "email" : "help@fibank.bg",
+                "chat" : "ОOnline chat"
+            },
+            "Sections" : {
+                "information" : "Information", 
+                "contact" : "Contact Us"
+            }
+        },
+        "DashboardSideMenu" : {
+            "Inquiries" : {
+                "Titles" : {
+                    "posGroups" : "POS transactions - by groups",
+                    "posPeriod" : "Transactions per period for POS",
+                    "balanceSSO" : "Balance on all accounts SSO",
+                    "dailyReport" : "Daily report for budget sales",
+                    "services" : "Performed services for the client",
+                    "sentSMS" : "SMS notifications sent",
+                    "feesDue" : "Due amounts from fees",
+                    "swift" : "SWIFT Translations",
+                    "sessions" : "Sessions"
+                }
+            },
+                "Purchases": {
+                    "Titles": {
+                        "newCreditTransfer": "New credit transfer",
+                        "budgetPayment": "Payment from/to the budget",
+                        "directDebit": "Direct debit",
+                        "bulkTransfer": "Mass transfer",
+                        "fileTransfers": "Transfers from file",
+                        "newRecurringTransfer": "New recurring transfer",
+                        "sebraPayments": "Payments to SEBRA",
+                        "cyCreditTransfer": "Credit transfer CY",
+                        "cyIntraBranchTransfer": "Intra-branch transfer CY",
+                        "currencyExchange": "Currency purchase/sale",
+                        "rateNegotiation": "Rate negotiation",
+                        "recurringTransferRegister": "Recurring transfer register",
+                        "transferRecipients": "Transfer recipients"
+                    },
+                    "Sections": {
+                        "transfers": "Transfers",
+                        "currencyOperations": "Currency operations",
+                        "registers": "Registers"
+                    }
+                },
+                "Withdrawals": {
+                    "Titles": {
+                    "accountStatement": "Account statement",
+                    "creditCardStatement": "Credit card statement"
+                    }
+                },
+                "Services": {
+                    "Titles": {
+                    "emailAccountReports": "Account reports by email",
+                    "emailCardStatements": "Card statements by email",
+                    "emailCardAuthorizations": "Card authorizations by email",
+                    "emailSwiftTransfers": "SWIFT transfers by email"
+                    }
+                },
+                "PublicServices": {
+                    "Titles": {
+                    "pendingPayments": "Outstanding obligations",
+                    "payDues": "Pay obligations",
+                    "municipalTaxes": "Pay municipal taxes and fees",
+                    "oneTimePayment": "One-time payment",
+                    "addSubscriberAccount": "Add subscriber account",
+                    "registeredSubscribers": "Registered subscriber accounts",
+                    "emailNotifications": "Email notifications",
+                    "paymentHistory": "Payment history"
+                    },
+                    "Sections": {
+                    "payDues": "Pay obligations",
+                    "subscriberAccounts": "Subscriber accounts",
+                    "other": "Other"
+                    }
+                },
+                "Declarations": {
+                    "Titles": {
+                    "noiDeclaration": "Declaration to NOI",
+                    "statisticalForm100k": "Statistical form BGN 100,000",
+                    "fundOriginDeclaration": "Declaration of funds origin",
+                    "crossBorderTransferDeclaration": "Cross-border transfer declaration"
+                    }
+                }
+        },
+        "DashboardNav" : {
+            "Settings" : {
+                "Titles" : {
+                    "personal": "Personal data",
+                    "general": "General settings",
+                    "account": "Account Settings",
+                    "deposit": "Deposit settings",
+                    "card": "Card Settings",
+                    "card3dSecure": "3D card security",
+                    "password": "Change password",
+                    "certRegister": "Certificate Registration",
+                    "qesRegister": "KEP Registration",
+                    "tokenPin": "PIN TOKEN Change",
+                    "emailSms": "Email and SMS notifications",
+                    "cardSms": "SMS notification for cards",
+                    "mobileApp": "Fibank Mobile App"
+                }
+            }
+        }
+    },
+    "Dashboard" : {
+        "Nav" : {
+            "language" : "Български",
+            "messages" : "Messages",
+            "notifications" : "Notifications",
+            "settings" : "Settings",
+            "profile" : "Profile",
+            "logout" : "Logout"
+        },
+        "Page" : {
+            "date" : "Date",
+            "user" : "User",
+            "firstName" : "Philip",
+            "lastName" : "Philipov",
+            "main" : "Home"
+        },
+        "Menu" : {
+            "button" : "New deposit",
+            "information" : "Information about Fibank",
+            "additional" : "Additional",
+            "SideMenu" : {
+                "Main": {
+                    "home": "Home",
+                    "inquiries": "Inquiries",
+                    "purchases": "Payments",
+                    "withdrawals": "Statements",
+                    "accounts": "Accounts",
+                    "deposits": "Deposits",
+                    "cards": "Cards",
+                    "forSignature": "Pending Signatures",
+                    "submittedDocuments": "Submitted Documents",
+                    "services": "Services",
+                    "publicServices": "Utility Services",
+                    "declarations": "Declarations"
+                },
+                "Additional": {
+                    "help": "Help",
+                    "site": "Go to Site",
+                    "mobileApp": "Mobile App"
+                },
+                "Info": {
+                    "branches": "Branches",
+                    "atms": "ATMs",
+                    "currencyRates": "Exchange Rates",
+                    "news": "News",
+                    "promotions": "Promotions"
+                }
+            }
+        },
+        "AccountsSum" : {
+            "First" : {
+                "title" : "Net disposable balance on accounts and deposits:",
+                "sum" : "29,178,004.45",
+                "currency" : "USD"
+            },
+            "Second" : {
+                "title" : "Total current balance in accounts and deposits:",
+                "sum" : "43,590.03",
+                "currency" : "USD"
+            },
+            "Third" : {
+                "title" : "Total net availability on card accounts:",
+                "sum" : "11,624.00",
+                "currency" : "USD"
+            }
+        },
+        "Modules" : {
+            "Account" : {
+                "account" : "Account",
+                "currency" : "Currency",
+                "availability" : "Availability",
+                "forDayBalance" : "Initial balance for the day",
+                "currentBalance" : "Current balance",
+                "dueFees" : "Due amounts from fees",
+                "actions" : "Actions"
+            },
+            "LastFiveFields": {
+                "type": "Type",
+                "date": "Date",
+                "documentRef": "Document and reference",
+                "recipientSender": "Recipient / Sender",
+                "account": "Account",
+                "amountCurrency": "Amount and currency"
+            },
+            "DepositFields": {
+                "deposit": "Deposit",
+                "currency": "Currency",
+                "availability": "Availability",
+                "accruedInterest": "Accrued interest",
+                "maturity": "Maturity",
+                "actions": "Actions"
+            },
+            "ForSignatureFields": {
+                "paymentType": "Payment type",
+                "payer": "Payer",
+                "recipient": "Recipient",
+                "amountCurrency": "Amount and currency"
+            },
+            "CardsFields": {
+                "card": "Card",
+                "currency": "Currency",
+                "availableFunds": "Available funds",
+                "liabilities": "Liabilities",
+                "minimumInstallment": "Min. installment",
+                "repayBy": "Repay by",
+                "secure3d": "3D security"
+            },
+            "AwaitingPayments": {
+                "name": "Name",
+                "dueDate": "Due date",
+                "autoPayment": "Auto payment",
+                "amount": "Amount"
+            },
+            "CreditsFields": {
+                "creditType": "Credit type",
+                "currency": "Currency",
+                "interestRate": "Interest %",
+                "dueInstallment": "Due installment",
+                "installmentDate": "Installment date",
+                "maturity": "Maturity"
+            }
+        }
+    }
+}

@@ -1,0 +1,375 @@
+{
+    "Login" : {
+        "Nav": {
+            "Language" : "English",
+            "Site" : "Към сайта",
+            "MobileApp" : "Мобилно приложение",
+            "ChangesInTariffs" : "Промени в Оу и тарифа",
+            "Help" : "Помощ",
+            "Button" : "Регистрация"
+        }
+        ,
+        "Articles" : {
+            "First" : {
+                "title" : "ВАЖНО!",
+                "description" : "ПИБ АД УВЕДОМЯВА КАРТОДЪРЖАТЕЛИТЕ си, че има информация за получени фалшиви съобщения по електронната поща, които...",
+                "moreInfo" : "Прочетете повече"
+            },
+            "Second" : {
+                "title" : "Разгледайте системата",
+                "description" : "Разгледайте и усетете онлайн банкирането чрез интерактивната ни демо версия.",
+                "moreInfo" : "ДЕМО ВЕРСИЯ"
+            },
+            "Third" : {
+                "title" : "Банкиране с Token",
+                "description" : "Мобилност, удобство и сигурност в едно, с нашето Token истройство за генериране на еднократни пароли за вход.",
+                "moreInfo" : "Научете повече"
+            }
+        }
+    },
+    "Register": {
+        "Nav" : {
+            "Language" : "English",
+            "Site" : "Към сайта",
+            "MobileApp" : "Мобилно приложение",
+            "ChangesInTariffs" : "Промени в Оу и тарифа",
+            "Help" : "Помощ",
+            "Button" : "Вход"
+        }
+    },
+    "FooterMain" : {
+        "account" : "Как да добавя сметка",
+        "sso" : "Всичко с един потребител (SSO)",
+        "registration" : "Процес на регистрация",
+        "signature" : "Електронен подпис",
+        "taxesFees" : "Такси и комисиони",
+        "documents" : "Документи",
+        "copyright" : "Първа инвестиционна банка 2009-2015."
+    },
+    "FooterAdditional" : {
+        "Text" : {
+            "questions" : "За всички въпроси нашите служители Ви очакват на:",
+            "callTax" : "* Разговорите към национален номер се таксуват според определените от Вашия оператор цени за обаждания към монер тип 0700 Vivacom. За абонати на Vivacom обаждане към този номер се таксува като обаждане към стационарен номер в мрежата на Vivacom.",
+            "findUs" : "Вижте къде се намираме:"
+        },
+        "Info" : {
+            "phone" : {
+                "label" : "Телефон: ",
+                "number" : "0700 21 7777 ",
+                "allDay" : " (денонощно)*"
+            },
+            "email" : {
+                "label" : "Имейл: ",
+                "address" : "e-bank@fibank.bg"
+            },
+            "chat" : {
+                "label" : "Чат: ",
+                "contactUs" : "Пишете ни"
+            }
+        },
+        "Where" : {
+            "branch" : "Клонове",
+            "atms" : "Банкомати"
+        }
+    },
+    "Forms" : {
+        "Register" : {
+            "Labels" : {
+                "egn" : "ЕГН",
+                "lnch" : "ЛНЧ или паспорт",
+                "cyrillic" : "Име и фамилия на кирилица",
+                "latin" : "Име и фамилия на латиница",
+                "email" : "Имейл",
+                "phone" : "Телефон",
+                "address" : "Адрес",
+                "username" : "Потребителско име",
+                "password" : "Парола за вход",
+                "confirmPass" : "Повторете паролата"
+            },
+            "Toasts" : {
+                "success" : "Успешна регистрация!",
+                "fail" : "Неуспешна регистрация"
+            },
+            "Errors" : {
+                "emptyEGN" : "Моля, въведете ЕГН!",
+                "invalidEGN" : "Невалидно ЕГН!",
+                "emptyName" : "Моля, въведете име!",
+                "invalidNameCyrillic" : "Моля, въведете име на кирилица!",
+                "invalidNameLatin" : "Моля, въведете име на латиница!",
+                "invalidLnch" : "Невалиден ЛНЧ!",
+                "emptyPhone" : "Моля, въведете телефон!",
+                "invalidPhone" : "Невалиден телефон!",
+                "emptyEmail" : "Моля, въведете имейл!",
+                "invalidEmail" : "Невалиден имейл!",
+                "emptyAddress" : "Моля, въведете адрес!",
+                "invalidAddress" : "Моля, въведете валиден адрес!",
+                "usernameShort" : "Потребителското име е твърде късо!",
+                "usernameNotLatin" : "Моля, въведете потребителско име на латиница!",
+                "passwordShort" : "Паролата е твърде къса!",
+                "passwordLong" : "Паролата е твърде дълга!",
+                "passwordNotLatin" : "Паролата трябва да съдържа символи на латиница!",
+                "passwordNoNumber" : "Паролата трябва да съдържа поне една цифра!",
+                "emptyConfirmPassword" : "Моля, повторете паролата!",
+                "passwordNotMatch" : "Паролата не съвпада!",
+                "emptyUsername" : "Моля, въведете потребителско име!",
+                "emptyPassword" : "Моля, въведете парола!"
+            },
+            "Title" : "Регистрация на нов потребител",
+            "Description" : "Тази регистрационна форма се попълва, само ако нямате потребителско име и парола за Виртуален банков клон (e-fibank) на ПИБ. Ако вече имате потребителско име и парола, добавянето на достъп до ново физическо или юридическо лице става в банката. Ако сте забравили своето потребителско име и/или парола, заповядайте в банката, за да ги получите.",
+            "RequiredInput" : "Задължителни полета",
+            "Reminder" : "Необходимо е да запомните потребителското си име и парола, които току-що въведохте.След като потвърдите регистрацията в банката, те ще Ви служат за вход във виртуален банков клон(e-fibank).",
+            "Button" : "Изпратете искане за регистрация"
+        },
+        "Login" : {
+            "Toasts" : {
+                "success" : "Успешен вход!",
+                "fail" : "Неуспешен вход"
+            },
+            "Labels" : {
+                "username" : "Потребител:",
+                "password" : "Парола:",
+                "button" : "Вход"
+            },
+            "Errors" : {
+                "emptyUsername" : "Моля, въведете потребителско име",
+                "emptyPassword" : "Моля, въведете парола"
+            },
+            "Title" : "Виртуален банков клон (e-fibank)"
+        }
+    },
+    "DropDown" : {
+        "MainNavHelp" : {
+            "Titles" : {
+                "articles" : "Помощни статии",
+                "fqa" : "Често задавани въпроси",
+                "security" : "Съвети за сигурност",
+                "phone" : "0700 12 777",
+                "email" : "help@fibank.bg",
+                "chat" : "Онлайн чат"
+            },
+            "Sections" : {
+                "information" : "Информация", 
+                "contact" : "Връзка с нас"
+            }
+        },
+        "DashboardSideMenu" : {
+            "Inquiries" : {
+                "Titles" : {
+                    "posGroups" : "ПОС транзакции - по групи",
+                    "posPeriod" : "ПОС транзакции за период",
+                    "balanceSSO" : "Салда по всички сметки SSO",
+                    "dailyReport" : "Дневен отчет за бюдж. разпродател",
+                    "services" : "Извършени услуги за клиент",
+                    "sentSMS" : "Изпратени SMS нотификации",
+                    "feesDue" : "Дължими суми от такси",
+                    "swift" : "Преводи по SWIFT",
+                    "sessions" : "Сесии"
+                }
+            },
+            "Purchases": {
+                "Titles": {
+                    "newCreditTransfer": "Нов кредитен превод",
+                    "budgetPayment": "Плащане от/към бюджета",
+                    "directDebit": "Директен дебит",
+                    "bulkTransfer": "Масов превод",
+                    "fileTransfers": "Преводи от файл",
+                    "newRecurringTransfer": "Нов периодичен превод",
+                    "sebraPayments": "Плащания към СЕБРА",
+                    "cyCreditTransfer": "Кредитен превод CY",
+                    "cyIntraBranchTransfer": "Вътрешноклонов превод CY",
+                    "currencyExchange": "Покупка/продажба на валута",
+                    "rateNegotiation": "Договаряне на курс",
+                    "recurringTransferRegister": "Регистър на пер. преводи",
+                    "transferRecipients": "Получатели за преводи"
+                },
+                "Sections": {
+                    "transfers": "Преводи",
+                    "currencyOperations": "Покупка/продажба на ваута",
+                    "registers": "Регистри"
+                }
+            },
+            "Withdrawals": {
+                "Titles": {
+                "accountStatement": "Извлечение по сметка",
+                "creditCardStatement": "Извлечение по кредитна карта"
+                }
+            },
+            "Services": {
+                "Titles": {
+                "emailAccountReports": "Отчети по e-mail за сметка",
+                "emailCardStatements": "Извлечения по e-mail за карти",
+                "emailCardAuthorizations": "Картови авторизации по e-mail",
+                "emailSwiftTransfers": "Преводи по SWIFT по e-mail"
+                }
+            },
+            "PublicServices": {
+                "Titles": {
+                "pendingPayments": "Задължения очакващи плащания",
+                "payDues": "Плащане на задължения",
+                "municipalTaxes": "Плащане на общински данъци и такси",
+                "oneTimePayment": "Еднократно плащане",
+                "addSubscriberAccount": "Добавяне на абонатна сметка",
+                "registeredSubscribers": "Регистрирани абонатни сметки",
+                "emailNotifications": "Известия по e-mail",
+                "paymentHistory": "История на плащания"
+                },
+                "Sections": {
+                "payDues": "Плащане на задължения",
+                "subscriberAccounts": "Абонатни сметки",
+                "other": "Други"
+                }
+            },
+            "Declarations": {
+                "Titles": {
+                "noiDeclaration": "Декларация в НОИ",
+                "statisticalForm100k": "Статистическа форма 100 000 лв.",
+                "fundOriginDeclaration": "Декларация за произход на средствата",
+                "crossBorderTransferDeclaration": "Декларация за презгранични преводи"
+                }
+            }
+        },
+        "DashboardNav" : {
+            "Settings" : {
+                "Titles" : {
+                    "personal": "Лични данни",
+                    "general": "Общи настройки",
+                    "account": "Настройки на сметка",
+                    "deposit": "Настройки на депозит",
+                    "card": "Настройки на карта",
+                    "card3dSecure": "3D сигурност на карти",
+                    "password": "Промяна на парола",
+                    "certRegister": "Регистриране на сертификат",
+                    "qesRegister": "Регистриране на КЕП",
+                    "tokenPin": "Промяна ПИН TOKEN",
+                    "emailSms": "Email и SMS известяване",
+                    "cardSms": "SMS известяване за карти",
+                    "mobileApp": "Мобилно приложение Fibank"
+                }
+            }
+        }
+    },
+    "Dashboard" : {
+        "Nav" : {
+            "language" : "English",
+            "messages" : "Съобщения",
+            "notifications" : "Известия",
+            "settings" : "Настройки",
+            "profile" : "Профил",
+            "logout" : "Изход"
+        },
+        "Page" : {
+            "date" : "Счетоводна дата",
+            "user" : "Потребител",
+            "firstName" : "Филип",
+            "lastName" : "Филипов",
+            "main" : "Начало"
+        },
+        "Menu" : {
+            "button" : "Нов превод",
+            "information" : "Информация за Fibank",
+            "additional" : "Допълнително",
+            "SideMenu" : {
+                "Main": {
+                    "home": "Начало",
+                    "inquiries": "Справки",
+                    "purchases": "Плащания",
+                    "withdrawals": "Извлечения",
+                    "accounts": "Сметки",
+                    "deposits": "Депозити",
+                    "cards": "Карти",
+                    "forSignature": "Превод за подпис",
+                    "submittedDocuments": "Наредени документи",
+                    "services": "Услуги",
+                    "publicServices": "Комунални услуги",
+                    "declarations": "Декларации"
+                },
+                "Additional": {
+                    "help": "Помощ",
+                    "site": "Към сайта",
+                    "mobileApp": "Мобилно приложение"
+                },
+                "Info": {
+                    "branches": "Клонове",
+                    "atms": "Банкомати",
+                    "currencyRates": "Валутни курсове",
+                    "news": "Новини",
+                    "promotions": "Промоции"
+                }
+            }
+        },
+        "AccountsSum" : {
+            "First" : {
+                "title" : "Нетна разполагаема наличност по сметки и депозити:",
+                "sum" : "50 203 000.03",
+                "currency" : "BGN"
+            },
+            "Second" : {
+                "title" : "Общо текущо салдо по сметки и депозити:",
+                "sum" : "75 000.00",
+                "currency" : "BGN"
+            },
+            "Third" : {
+                "title" : "Обща нетна разполагаемост по картови сметки:",
+                "sum" : "20 000.00",
+                "currency" : "BGN"
+            }
+        },
+        "Modules" : {
+            "Account" : {
+                "account" : "Сметка",
+                "currency" : "Валута",
+                "availability" : "Разполагаемост",
+                "forDayBalance" : "Начално салдо за деня",
+                "currentBalance" : "Текущо салдо",
+                "dueFees" : "Дължими суми от такси",
+                "actions" : "Действия"
+            },
+            "LastFiveFields": {
+                "type": "Тип",
+                "date": "Дата",
+                "documentRef": "Документ и референция",
+                "recipientSender": "Получател / наредител",
+                "account": "Сметка",
+                "amountCurrency": "Сума и валута"
+            },
+            "DepositFields": {
+                "deposit": "Депозит",
+                "currency": "Валута",
+                "availability": "Разполагаемост",
+                "accruedInterest": "Натрупана лихва",
+                "maturity": "Падеж",
+                "actions": "Действия"
+            },
+            "ForSignatureFields": {
+                "paymentType": "Вид плащане",
+                "payer": "Платец",
+                "recipient": "Получател",
+                "amountCurrency": "Сума и валута"
+            },
+            "CardsFields": {
+                "card": "Карта",
+                "currency": "Валута",
+                "availableFunds": "Наличност",
+                "liabilities": "Задължения",
+                "minimumInstallment": "Мин. вноска",
+                "repayBy": "Погасете до",
+                "secure3d": "3D сигурност"
+            },
+            "AwaitingPayments": {
+                "name": "Наименование",
+                "dueDate": "Към дата",
+                "autoPayment": "Автом. плащане",
+                "amount": "Сума"
+            },
+            "CreditsFields": {
+                "creditType": "Вид кредит",
+                "currency": "Валута",
+                "interestRate": "Лихвен %",
+                "dueInstallment": "Дължима вноска",
+                "installmentDate": "Дата за вноска",
+                "maturity": "Падеж"
+            }
+        }
+    }
+    
+}

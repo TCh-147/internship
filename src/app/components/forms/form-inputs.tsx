@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useTranslations } from "next-intl"
 
 type Props = {
     register: any
@@ -15,6 +15,7 @@ type Props = {
 
 const FormInputs = ({ register, errors, label, fieldName, type, required, progress, watch}: Props) => {
 
+    const t = useTranslations('Forms')
     const pass = watch(`${fieldName === "password" ? "password" : ""}`)
 
     let strength = 0
@@ -32,7 +33,7 @@ const FormInputs = ({ register, errors, label, fieldName, type, required, progre
     return (
         <>
             <label className={`my-2 px-2 text-base ${required ? "before:content-['*'] before:text-red-500 before:pr-1" : ""}`}>
-                {label}
+                {t(label)}
             </label>
             <div>
                 <input
@@ -48,7 +49,7 @@ const FormInputs = ({ register, errors, label, fieldName, type, required, progre
 
                 </div>
                 <p className="my-2 text-red-500 text-right">
-                    {errors[fieldName]?.message}
+                    {errors[fieldName]?.message ? t(errors[fieldName]?.message) : ""}
                 </p>
             </div>
         </>
