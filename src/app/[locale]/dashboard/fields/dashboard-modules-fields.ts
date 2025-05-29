@@ -1,67 +1,67 @@
 export interface FieldConfig {
-    title: string
+    column: string
     checkbox?: boolean
 }
 
 // -------------- MODULES TABLE TOP FIELDS ---------------
 
 export const accountFields: FieldConfig[] = [
-    {title: "Account.account"},
-    {title: "Account.currency"},
-    {title: "Account.availability"},
-    {title: "Account.forDayBalance"},
-    {title: "Account.currentBalance"},
-    {title: "Account.dueFees"},
-    {title: "Account.actions"}
+    {column: "Account.account"},
+    {column: "Account.currency"},
+    {column: "Account.availability"},
+    {column: "Account.forDayBalance"},
+    {column: "Account.currentBalance"},
+    {column: "Account.dueFees"},
+    {column: "Account.actions"}
 ]
 
 export const lastFiveFields: FieldConfig[] = [
-    {title: "LastFiveFields.type"},
-    {title: "LastFiveFields.date"},
-    {title: "LastFiveFields.documentRef"},
-    {title: "LastFiveFields.recipientSender"},
-    {title: "LastFiveFields.account"},
-    {title: "LastFiveFields.amountCurrency"},
+    {column: "LastFiveFields.type"},
+    {column: "LastFiveFields.date"},
+    {column: "LastFiveFields.documentRef"},
+    {column: "LastFiveFields.recipientSender"},
+    {column: "LastFiveFields.account"},
+    {column: "LastFiveFields.amountCurrency"},
 ]
 
 export const depositFields: FieldConfig[] = [
-    {title: "DepositFields.deposit"},
-    {title: "DepositFields.currency"},
-    {title: "DepositFields.availability"},
-    {title: "DepositFields.accruedInterest"},
-    {title: "DepositFields.maturity"},
-    {title: "DepositFields.actions"}
+    {column: "DepositFields.deposit"},
+    {column: "DepositFields.currency"},
+    {column: "DepositFields.availability"},
+    {column: "DepositFields.accruedInterest"},
+    {column: "DepositFields.maturity"},
+    {column: "DepositFields.actions"}
 ]
 
 export const forSignatureFields: FieldConfig[] = [
-    {title: "ForSignatureFields.paymentType", checkbox: true},
-    {title: "ForSignatureFields.payer"},
-    {title: "ForSignatureFields.recipient"},
-    {title: "ForSignatureFields.amountCurrency"}
+    {column: "ForSignatureFields.paymentType", checkbox: true},
+    {column: "ForSignatureFields.payer"},
+    {column: "ForSignatureFields.recipient"},
+    {column: "ForSignatureFields.amountCurrency"}
 ]
 
 export const cardsFields: FieldConfig[] = [
-    {title: "CardsFields.card", checkbox: true},
-    {title: "CardsFields.currency"},
-    {title: "CardsFields.availableFunds"},
-    {title: "CardsFields.liabilities"},
-    {title: "CardsFields.minimumInstallment"},
-    {title: "CardsFields.repayBy"},
-    {title: "CardsFields.secure3d"}
+    {column: "CardsFields.card", checkbox: true},
+    {column: "CardsFields.currency"},
+    {column: "CardsFields.availableFunds"},
+    {column: "CardsFields.liabilities"},
+    {column: "CardsFields.minimumInstallment"},
+    {column: "CardsFields.repayBy"},
+    {column: "CardsFields.secure3d"}
 ]
 
 export const awaitingPayments: FieldConfig[] = [
-    {title: "AwaitingPayments.name", checkbox: true},
-    {title: "AwaitingPayments.dueDate"},
-    {title: "AwaitingPayments.autoPayment"},
-    {title: "AwaitingPayments.amount"}
+    {column: "AwaitingPayments.name", checkbox: true},
+    {column: "AwaitingPayments.dueDate"},
+    {column: "AwaitingPayments.autoPayment"},
+    {column: "AwaitingPayments.amount"}
 ]
 
 export const creditsFields: FieldConfig[] = [
-    {title: "CreditsFields.creditType", checkbox: true},
-    {title: "CreditsFields.currency"},
-    {title: "CreditsFields.interestRate"},
-    {title: "CreditsFields.dueInstallment"},
-    {title: "CreditsFields.installmentDate"},
-    {title: "CreditsFields.maturity"},
+    {column: "CreditsFields.creditType", checkbox: true},
+    {column: "CreditsFields.currency"},
+    {column: "CreditsFields.interestRate"},
+    {column: "CreditsFields.dueInstallment"},
+    {column: "CreditsFields.installmentDate"},
+    {column: "CreditsFields.maturity"},
 ]

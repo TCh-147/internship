@@ -8,10 +8,14 @@ import DashboardNav from "./dashboard-navigation"
 import { accountsSumField } from "./fields/dashboard-accounts-sum-fields"
 import { accountFields, forSignatureFields, cardsFields, awaitingPayments, lastFiveFields, creditsFields, depositFields } from "./fields/dashboard-modules-fields"
 import { sideMenuMainFields, sideMenuInfoFields, sideMenuAdditionalFields } from "./fields/dashboard-sidemenu-fields"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
+import ModulesTopRow from "./dashboard-module-top-row"
+import { useState } from "react"
 
 export default function Dashboard(){
     const t = useTranslations('Dashboard')
+    const locale = useLocale()
+    const currentDate = new Intl.DateTimeFormat(locale).format(new Date())
 
     return(
         <div className="bg-gray-100">
@@ -19,7 +23,7 @@ export default function Dashboard(){
 
             <div className="my-2 m-auto w-5/6 grid grid-cols-4 bg-white">
                 <div className="row-span-full border-r-1 border-gray-300">
-                    <p className="px-4 py-2 text-[#808080]">{t('Page.date')}: 20/Яну/2015</p>
+                    <p className="px-4 py-2 text-[#808080]">{t('Page.date')}{currentDate}</p>
                     <div className="px-4 py-2">
                         <p>Image</p>
                         <p>{t('Page.user')}:</p>
@@ -28,22 +32,22 @@ export default function Dashboard(){
                     <hr className="mt-2 pb-4 text-gray-300"/>
                     <button className="bg-red-500 w-full p-2 rounded-xs text-sm uppercase text-white">{t('Menu.button')}</button>
                     {
-                        sideMenuMainFields.map(({title, dropDown, dropDownFields}) => (
-                            <SideMenu key={title} title={title} dropDown={dropDown} dropDownFields={dropDownFields}/>
+                        sideMenuMainFields.map(({title, dropDown, dropDownFields, icon}) => (
+                            <SideMenu key={title} title={title} dropDown={dropDown} dropDownFields={dropDownFields} icon={icon}/>
                         ))
                     }
                     <hr className="mt-2 pb-4 text-gray-300"/>
                     <h2 className="p-4 px-6 pb-2 text-base uppercase text-[#808080]">{t('Menu.information')}</h2>
                     {
-                        sideMenuInfoFields.map(({title}) => (
-                            <SideMenu key={title} title={title}/>
+                        sideMenuInfoFields.map(({title, icon}) => (
+                            <SideMenu key={title} title={title} icon={icon}/>
                         ))
                     }
                     <hr className="mt-2 pb-4 text-gray-300"/>
                     <h2 className="p-4 px-6 pb-2 text-base uppercase text-[#808080]">{t('Menu.additional')}</h2>
                     {
-                        sideMenuAdditionalFields.map(({title}) => (
-                            <SideMenu key={title} title={title} />
+                        sideMenuAdditionalFields.map(({title, icon}) => (
+                            <SideMenu key={title} title={title} icon={icon}/>
                         ))
                     }
                 </div>
@@ -57,54 +61,76 @@ export default function Dashboard(){
                        }
                        
                     </div>
-                    <div className="flex flex-row">
-                        {
-                            accountFields.map(({title}) => {
-                                return <ModuleTopRow key={title} title={title} />
+                    <div className="flex flex-col p-4">
+                        <ModulesTopRow title="Account.title" />
+                        <div className="flex flex-row w-full justify-between py-2 px-4 bg-gray-100 border-1 border-gray-300">
+                           {
+                            accountFields.map(({column}) => {
+                                return <ModuleTopRow key={column} column={column}/>
                             })
-                        } 
+                        }  
+                        </div>
+                        
                     </div>
-                    <div className="flex flex-row">
+                    <div className="flex flex-col p-4">
+                        <ModulesTopRow title="ForSignatureFields.title" />
+                        <div className="flex flex-row w-full justify-between py-2 px-4 bg-gray-100 border-1 border-gray-300">
                         {
-                            forSignatureFields.map(({title}) => {
-                                return <ModuleTopRow key={title} title={title} />
+                            forSignatureFields.map(({column, checkbox}) => {
+                                return <ModuleTopRow key={column} column={column} checkbox={checkbox}/>
                             })
-                        } 
+                        }
+                        </div> 
                     </div>
-                    <div className="flex flex-row">
+                    <div className="flex flex-col p-4">
+                        <ModulesTopRow title="CardsFields.title" />
+                        <div className="flex flex-row w-full justify-between py-2 px-4 bg-gray-100 border-1 border-gray-300">
                         {
-                            cardsFields.map(({title}) => {
-                                return <ModuleTopRow key={title} title={title} />
+                            cardsFields.map(({column, checkbox}) => {
+                                return <ModuleTopRow key={column} column={column} checkbox={checkbox}/>
                             })
-                        } 
+                        }
+                        </div>  
                     </div>
-                    <div className="flex flex-row">
+                    <div className="flex flex-col p-4">
+                        <ModulesTopRow title="AwaitingPayments.title" />
+                        <div className="flex flex-row w-full justify-between py-2 px-4 bg-gray-100 border-1 border-gray-300">
                         {
-                            awaitingPayments.map(({title}) => {
-                                return <ModuleTopRow key={title} title={title} />
+                            awaitingPayments.map(({column, checkbox}) => {
+                                return <ModuleTopRow key={column} column={column} checkbox={checkbox}/>
                             })
-                        } 
+                        }
+                        </div>
                     </div>
-                    <div className="flex flex-row">
+                    <div className="flex flex-col p-4">
+                        <ModulesTopRow title="LastFiveFields.title" />
+                        <div className="flex flex-row w-full justify-between py-2 px-4 bg-gray-100 border-1 border-gray-300">
                         {
-                            lastFiveFields.map(({title}) => {
-                                return <ModuleTopRow key={title} title={title} />
+                            lastFiveFields.map(({column}) => {
+                                return <ModuleTopRow key={column} column={column} />
                             })
-                        } 
+                        }
+                        </div>
                     </div>
-                    <div className="flex flex-row">
+                    <div className="flex flex-col p-4">
+                        <ModulesTopRow title="CreditsFields.title" />
+                        <div className="flex flex-row w-full justify-between py-2 px-4 bg-gray-100 border-1 border-gray-300">
                         {
-                            creditsFields.map(({title}) => {
-                                return <ModuleTopRow key={title} title={title} />
+                            creditsFields.map(({column, checkbox}) => {
+                                return <ModuleTopRow key={column} column={column} checkbox={checkbox}/>
                             })
-                        } 
+                        }
+                        </div> 
                     </div>
-                    <div className="flex flex-row">
+                    <div className="flex flex-col p-4">
+                        <ModulesTopRow title="DepositFields.title" />
+                        <div className="flex flex-row w-full justify-between py-2 px-4 bg-gray-100 border-1 border-gray-300">
                         {
-                            depositFields.map(({title}) => {
-                                return <ModuleTopRow key={title} title={title} />
+                            depositFields.map(({column}) => {
+                                return <ModuleTopRow key={column} column={column} />
                             })
-                        } 
+                        }
+                        </div> 
                     </div>
                 </div>
                 

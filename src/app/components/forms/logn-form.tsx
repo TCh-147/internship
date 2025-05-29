@@ -8,6 +8,7 @@ import { LoginSchema, loginSchema } from "app/validations/loginSchema";
 import { useTranslations } from "next-intl";
 import Redirect from "app/api/utilis/redirectDashboard";
 import { useRouter } from "next/navigation";
+import UserIcon from "../icons/user";
 
 export default function LoginForm(){
   const t = useTranslations('Forms.Login')

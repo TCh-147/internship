@@ -1,14 +1,15 @@
 import { useTranslations } from "next-intl"
 
 type Props = {
-    title: string
+    column: string
+    checkbox?: boolean
 }
 
-const ModuleTopRow = ({title}: Props) => {
+const ModuleTopRow = ({column, checkbox}: Props) => {
     const t = useTranslations('Dashboard.Modules')
     return(
         <>
-            <div className="p-4">{t(title)}</div>
+            <div><input className={`${checkbox ? "mr-2 hover:cursor-pointer" : "hidden"}`} type="checkbox"/>{t(column)}</div>
         </>
     )
 }

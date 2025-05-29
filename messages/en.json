@@ -140,11 +140,11 @@
         "MainNavHelp" : {
             "Titles" : {
                 "articles" : "Help articles",
-                "fqa" : "frequently asked questions",
+                "fqa" : "Frequently asked questions",
                 "security" : "Security tips",
                 "phone" : "0700 12 777",
                 "email" : "help@fibank.bg",
-                "chat" : "ОOnline chat"
+                "chat" : "Online chat"
             },
             "Sections" : {
                 "information" : "Information", 
@@ -257,7 +257,7 @@
             "logout" : "Logout"
         },
         "Page" : {
-            "date" : "Date",
+            "date" : "Date: ",
             "user" : "User",
             "firstName" : "Philip",
             "lastName" : "Philipov",
@@ -315,6 +315,7 @@
         },
         "Modules" : {
             "Account" : {
+                "title" : "Accounts",
                 "account" : "Account",
                 "currency" : "Currency",
                 "availability" : "Availability",
@@ -324,6 +325,7 @@
                 "actions" : "Actions"
             },
             "LastFiveFields": {
+                "title" : "Last 5 transfers",
                 "type": "Type",
                 "date": "Date",
                 "documentRef": "Document and reference",
@@ -332,6 +334,7 @@
                 "amountCurrency": "Amount and currency"
             },
             "DepositFields": {
+                "title" : "Deposits",
                 "deposit": "Deposit",
                 "currency": "Currency",
                 "availability": "Availability",
@@ -340,12 +343,14 @@
                 "actions": "Actions"
             },
             "ForSignatureFields": {
+                "title" : "To sign",
                 "paymentType": "Payment type",
                 "payer": "Payer",
                 "recipient": "Recipient",
                 "amountCurrency": "Amount and currency"
             },
             "CardsFields": {
+                "title" : "Cards",
                 "card": "Card",
                 "currency": "Currency",
                 "availableFunds": "Available funds",
@@ -355,19 +360,22 @@
                 "secure3d": "3D security"
             },
             "AwaitingPayments": {
+                "title" : "Due accounts awaiting payment",
                 "name": "Name",
                 "dueDate": "Due date",
                 "autoPayment": "Auto payment",
                 "amount": "Amount"
             },
             "CreditsFields": {
+                "title" : "Credits",
                 "creditType": "Credit type",
                 "currency": "Currency",
                 "interestRate": "Interest %",
                 "dueInstallment": "Due installment",
                 "installmentDate": "Installment date",
                 "maturity": "Maturity"
-            }
+            },
+            "moreInfo" : "See all"
         }
     }
 }

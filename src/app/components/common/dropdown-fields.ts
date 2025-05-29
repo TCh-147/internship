@@ -2,17 +2,18 @@ export interface IDropDownFieldConfig{
     title: string
     section?: string
     line?: boolean
+    icon?: string
 }
 
 // -------------- MAIN NAVIGATION HELP FIELDS ---------------
 
 export const helpDropDownFields: IDropDownFieldConfig[] = [
-    {title: "MainNavHelp.Titles.articles", section: "MainNavHelp.Sections.information"},
-    {title: "MainNavHelp.Titles.fqa"},
-    {title: "MainNavHelp.Titles.security", line: true},
-    {title: "MainNavHelp.Titles.phone", section: "MainNavHelp.Sections.contact"},
-    {title: "MainNavHelp.Titles.email"},
-    {title: "MainNavHelp.Titles.chat"},
+    {title: "MainNavHelp.Titles.articles", section: "MainNavHelp.Sections.information", icon: "document"},
+    {title: "MainNavHelp.Titles.fqa", icon: "questionMark"},
+    {title: "MainNavHelp.Titles.security", line: true, icon: "secureDocument"},
+    {title: "MainNavHelp.Titles.phone", section: "MainNavHelp.Sections.contact", icon: "phone"},
+    {title: "MainNavHelp.Titles.email", icon: "email"},
+    {title: "MainNavHelp.Titles.chat", icon: "chat"},
 ]
 
 // -------------- DASHBOARD SIDE MENU FIELDS ---------------

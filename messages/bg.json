@@ -258,7 +258,7 @@
             "logout" : "Изход"
         },
         "Page" : {
-            "date" : "Счетоводна дата",
+            "date" : "Счетоводна дата: ",
             "user" : "Потребител",
             "firstName" : "Филип",
             "lastName" : "Филипов",
@@ -316,6 +316,7 @@
         },
         "Modules" : {
             "Account" : {
+                "title" : "Сметки",
                 "account" : "Сметка",
                 "currency" : "Валута",
                 "availability" : "Разполагаемост",
@@ -325,6 +326,7 @@
                 "actions" : "Действия"
             },
             "LastFiveFields": {
+                "title" : "Последни 5 превода",
                 "type": "Тип",
                 "date": "Дата",
                 "documentRef": "Документ и референция",
@@ -333,6 +335,7 @@
                 "amountCurrency": "Сума и валута"
             },
             "DepositFields": {
+                "title" : "Депозити",
                 "deposit": "Депозит",
                 "currency": "Валута",
                 "availability": "Разполагаемост",
@@ -341,12 +344,14 @@
                 "actions": "Действия"
             },
             "ForSignatureFields": {
+                "title" : "За подпис",
                 "paymentType": "Вид плащане",
                 "payer": "Платец",
                 "recipient": "Получател",
                 "amountCurrency": "Сума и валута"
             },
             "CardsFields": {
+                "title" : "Карти",
                 "card": "Карта",
                 "currency": "Валута",
                 "availableFunds": "Наличност",
@@ -356,19 +361,22 @@
                 "secure3d": "3D сигурност"
             },
             "AwaitingPayments": {
+                "title" : "Задължения очакващи плащане",
                 "name": "Наименование",
                 "dueDate": "Към дата",
                 "autoPayment": "Автом. плащане",
                 "amount": "Сума"
             },
             "CreditsFields": {
+                "title" : "Кредити",
                 "creditType": "Вид кредит",
                 "currency": "Валута",
                 "interestRate": "Лихвен %",
                 "dueInstallment": "Дължима вноска",
                 "installmentDate": "Дата за вноска",
                 "maturity": "Падеж"
-            }
+            },
+            "moreInfo" : "Виж всички"
         }
     }
     
